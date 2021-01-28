@@ -1,0 +1,13 @@
+.wh(@w, @h) {
+	width: round(@w,1);
+	height: round(@h,1);
+}
+
+.padding(@1,@2,@3,@4,@main-value){
+padding:round((@1/@main-value)*1em,1) 
+round((@2/@main-value)*1em,1) 
+round((@3/@main-value)*1em,1) 
+round((@4/@main-value)*1em,1) ;
+}
+
+

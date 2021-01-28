@@ -1,0 +1,9 @@
+// .font-size-adaptiv позволяет делать адптивным шрифт включает в себя 4 параметра 
+// @font-size-max-максимальный размер шрифта от которого пойдет уменьшение
+// @font-size-min-манимальный размер который нужно получить при определенном размере экрана 
+// @max-conteiner-максимальный размер контейнера от которого пойдет увелечение шрифта или уменьшение
+// @min-conteiner-минимальный размер контейнера на котором будет минимальная ширина текста 
+
+.font-size-adaptiv(@font-size-max, @font-size-min, @max-conteiner, @min-conteiner) when(isnumber(@font-size-max)) {
+	font-size: calc(@font-size-min + (unit(@font-size-max) - unit(@font-size-min)) * ~"(100vw - @{min-conteiner})"/ (unit(@max-conteiner) - unit(@min-conteiner)));
+}
