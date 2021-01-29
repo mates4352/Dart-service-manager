@@ -1,0 +1,80 @@
+.modal{
+	.wh(100vw,100vh);
+
+	position:fixed;
+	top:0;
+	left:0;
+
+	background-color: #bb70e79a;
+	visibility: hidden;
+	opacity: 0;
+
+	transition: opacity 1s ease,visibility 1s ease;
+}
+.modal.active{
+	visibility: visible;
+	opacity: 1;
+	
+}
+.modal__body{
+	.wh(50vw,50vh);
+
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%) ;
+
+	box-shadow:0 25px 15px #061e37;
+	background-color: @tema-color;
+
+	@media screen and (max-width:768px) {
+		.wh(100vw,60vh);
+	}
+}
+
+.modal__close{
+	.font(30px,@main-color);
+	cursor: pointer;
+
+	position: absolute;
+	top:5px;
+	right: 5px;
+}
+.modal__title{
+	.font(45px,"Raleway_Bold",@main-color,center);
+	margin-top: 25px;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 5px @main-color;
+}
+
+
+.modal__form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.modal__input{
+	.font(18px,"Raleway_SemiBold",@tema-color);
+	.wh(90%,50px);
+
+	text-indent: 25px;
+	margin-top:25px;
+	box-shadow: 0px 1px 5px #fff;
+	transition: color 500ms ease,background-color 500ms ease,border 1s ease;
+}
+
+.modal__input:focus{
+	color: @main-color;
+	
+	background-color:@tema-color ;
+	box-shadow: 0px 0px 0px #fff;
+	border: 1px solid #fff;
+}
+
+.modal__input::placeholder{
+	.font(25px,"Raleway_SemiBold");
+	transition: text-indent 1s ease;
+}
+.modal__input:focus::placeholder{
+	text-indent: 100vw;
+}

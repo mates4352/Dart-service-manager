@@ -1,4 +1,3 @@
-"use string"
 let modal = document.querySelector('.modal')
 let modalbody = document.querySelector('.modal__body')
 let bth = document.querySelector('.header__bth')
@@ -15,3 +14,4 @@ bth.addEventListener('click', function () {
 modal.addEventListener('click', function (event) {
 	event.target.classList.remove('active')
 })
+
