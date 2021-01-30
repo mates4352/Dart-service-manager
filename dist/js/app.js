@@ -27,6 +27,34 @@ let bthSlowDown = document.querySelector('.media__bth--slowDown')
 let bthNormalSpeed = document.querySelector('.media__bth--normalSpeed')
 let bthSpeedUp = document.querySelector('.media__bth--speedUp')
 
+let bthAss= document.querySelectorAll('.media__bth')
+
+for (let i = 0; i < bthAss.length; i++) {
+	bthAss[1].addEventListener("click", function () {
+		video.playbackRate = .5;
+	})
+	bthAss[2].addEventListener("click", function () {
+		video.playbackRate = 1;
+	})
+	bthAss[3].addEventListener("click", function () {
+		video.playbackRate = 2;
+	})
+}
+
+// bthAss.forEach(function (event) {
+// 	event.addEventListener("click", function () {
+// 		video.playbackRate = 11.5;
+// 	})
+// })
+
+// bthAss[1].addEventListener("click", function () {
+// 	video.playbackRate = 11.5;
+// })
+
+function slowDown() {
+	video.play();
+	video.playbackRate = 0.5;
+}
 
 function classListToggle(value) {
 	value.classList.toggle('active')
