@@ -14,10 +14,10 @@
 .modal.active{
 	visibility: visible;
 	opacity: 1;
-	
 }
 .modal__body{
 	.wh(50vw,50vh);
+	max-width: 600px;
 
 	position: absolute;
 	top:50%;
@@ -42,11 +42,12 @@
 }
 .modal__title{
 	.font(45px,"Raleway_Bold",@main-color,center);
-	margin-top: 25px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 	text-transform: uppercase;
-	text-shadow: 2px 2px 5px @main-color;
+	text-shadow: 1px 1px 5px @main-color;
+	background-color: rgb(43, 82, 119);
 }
-
 
 .modal__form{
 	display: flex;
@@ -59,13 +60,13 @@
 
 	text-indent: 25px;
 	margin-top:25px;
-	box-shadow: 0px 1px 5px #fff;
+	box-shadow: 0px 1px 4px #fff;
 	transition: color 500ms ease,background-color 500ms ease,border 1s ease;
 }
 
 .modal__input:focus{
 	color: @main-color;
-	
+
 	background-color:@tema-color ;
 	box-shadow: 0px 0px 0px #fff;
 	border: 1px solid #fff;
