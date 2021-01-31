@@ -1,38 +1,21 @@
 let video = document.querySelector('.media__video')
+let media = document.querySelector('.media')
 let bg= document.querySelector('.media-bg')
 let videoBth = document.querySelector('.media-bth')
 let controls = document.querySelector('.media-controls')
 let progress = document.querySelector('.media__progress')
 let durationBar = document.querySelector(".media__durationBar")
 
+
 let bthControls = document.querySelector('.media__bth--controls')
-let bthSlowDown = document.querySelector('.media__bth--slowDown')
-let bthNormalSpeed = document.querySelector('.media__bth--normalSpeed')
-let bthSpeedUp = document.querySelector('.media__bth--speedUp')
+let mediaSound = document.querySelector('.media__sound')
 
-let bthAss= document.querySelectorAll('.media__bth')
+let mediaRadio = document.querySelector('.media__radio')
+mediaSound.innerHTML = 100 + "%"
 
-for (let i = 0; i < bthAss.length; i++) {
-	bthAss[1].addEventListener("click", function () {
-		video.playbackRate = .5;
-	})
-	bthAss[2].addEventListener("click", function () {
-		video.playbackRate = 1;
-	})
-	bthAss[3].addEventListener("click", function () {
-		video.playbackRate = 15;
-	})
+function playbackRate(value) {
+	video.playbackRate = value;
 }
-
-// bthAss.forEach(function (event) {
-// 	event.addEventListener("click", function () {
-// 		video.playbackRate = 11.5;
-// 	})
-// })
-
-// bthAss[1].addEventListener("click", function () {
-// 	video.playbackRate = 11.5;
-// })
 
 function slowDown() {
 	video.play();
@@ -76,24 +59,59 @@ function progressUpdate() {
 	durationBar.style.width = (video.currentTime / video.duration * 100)  + "%";
 }
 
-video.addEventListener('click', function () {
-	if (video.paused && bthControls.classList.contains('active')) {
-		video.pause()
+
+media.addEventListener('click', event => {
+
+	if (event.target.classList.contains("media__video")) {
+
+		if (video.paused && bthControls.classList.contains('active')) {
+			video.pause()
+		}
+	
+		else if (video.paused) {
+			videoPlay()
+			classListAdd(bg)
+			classListAdd(videoBth)
+		}
+			
+		else{
+			videoPause()
+			classListRemove(bg)
+			classListRemove(videoBth)
+		}
+		
+		classListRemove(controls)
+
 	}
 
-	else if (video.paused) {
-		videoPlay()
-		classListAdd(bg)
-		classListAdd(videoBth)
-	}
-		
-	else{
-		videoPause()
-		classListRemove(bg)
-		classListRemove(videoBth)
+	if (event.target.classList.contains("media-bth")) {
+		classListToggle(bg)
+		classListToggle(videoBth)
+		VideoPlayPaused()
 	}
 	
-	classListRemove(controls)
+	if (event.target.classList.contains("media__bth--controls")) {
+		classListToggle(bthControls)
+		VideoPlayPaused()
+	}
+
+	if (event.target.classList.contains("media__bth--slowDown")) {
+		playbackRate(0.5)
+	}
+
+	if (event.target.classList.contains("media__bth--normalSpeed")) {
+		playbackRate(1)
+	}
+
+	if (event.target.classList.contains("media__bth--speedUp")) {
+		playbackRate(10)
+	}
+
+	if (event.target.classList.contains("media__radio")) {
+		video.volume = mediaRadio.value / 100
+		mediaSound.innerHTML = mediaRadio.value + "%"
+	}
+
 })
 
 video.addEventListener('mouseover', function () {
@@ -104,12 +122,6 @@ video.addEventListener('mouseout', function () {
 	classListRemove(controls)
 })
 
-videoBth.addEventListener('click', function () {
-	classListToggle(bg)
-	classListToggle(videoBth)
-	VideoPlayPaused()
-})
-
 controls.addEventListener('mouseover', function () {
 	ifContainsAddClass()
 })
@@ -118,10 +130,6 @@ controls.addEventListener('mouseout', function () {
 	classListRemove(controls)
 })
 
-bthControls.addEventListener('click', function () {
-	classListToggle(bthControls)
-	VideoPlayPaused()
-})
 
 
 
