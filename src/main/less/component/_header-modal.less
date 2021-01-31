@@ -45,8 +45,6 @@
 	padding-top: 25px;
 	padding-bottom: 25px;
 	text-transform: uppercase;
-	text-shadow: 1px 1px 5px @main-color;
-	background-color: rgb(43, 82, 119);
 }
 
 .modal__form{
@@ -54,13 +52,32 @@
 	flex-direction: column;
 	align-items: center;
 }
+
+
+.modal__input-radio{
+	.font(12px,"Raleway_SemiBold",@main-color);
+	align-self: flex-start;
+
+	margin-top: 25px;
+	margin-left: 30px;
+}
+
+.modal__label{
+	.font(18px,"Raleway_SemiBold",@main-color);
+	align-self: flex-start;
+	position: relative;
+	top: 40px;
+	left: 50px;
+}
+
+
 .modal__input{
 	.font(18px,"Raleway_SemiBold",@tema-color);
 	.wh(90%,50px);
 
 	text-indent: 25px;
 	margin-top:25px;
-	box-shadow: 0px 1px 4px #fff;
+	box-shadow: 0px 1px 4px @main-color;
 	transition: color 500ms ease,background-color 500ms ease,border 1s ease;
 }
 
@@ -68,8 +85,8 @@
 	color: @main-color;
 
 	background-color:@tema-color ;
-	box-shadow: 0px 0px 0px #fff;
-	border: 1px solid #fff;
+	box-shadow: 0px 0px 0px @main-color;
+	border: 1px solid @main-color;
 }
 
 .modal__input::placeholder{

@@ -34,11 +34,6 @@ function playbackRate(value) {
 	video.playbackRate = value;
 }
 
-function slowDown() {
-	video.play();
-	video.playbackRate = 0.5;
-}
-
 function classListToggle(value) {
 	value.classList.toggle('active')
 }
@@ -72,10 +67,15 @@ function classListRemove(value) {
 	value.classList.remove('active')
 }
 
-function progressUpdate() { 
-	durationBar.style.width = (video.currentTime / video.duration * 100)  + "%";
-}
+let durationBarTime = document.querySelector('.media__durationBar-time')
+let durationBarSecond = document.querySelector('.second')
+let durationBarMinute = document.querySelector('.minute')
+let durationBarHour = document.querySelector('.hour')
 
+function progressUpdate() { 
+	durationBar.style.width = (video.currentTime / video.duration * 100) + "%"
+	durationBarSecond.innerHTML = video.currentTime.toFixed() 
+}
 
 media.addEventListener('click', event => {
 
@@ -123,7 +123,7 @@ media.addEventListener('click', event => {
 	if (event.target.classList.contains("media__bth--speedUp")) {
 		playbackRate(10)
 	}
-
+	video.volume = 0
 	if (event.target.classList.contains("media__radio")) {
 		video.volume = mediaRadio.value / 100
 		mediaSound.innerHTML = mediaRadio.value + "%"
@@ -145,4 +145,25 @@ controls.addEventListener('mouseover', function () {
 
 controls.addEventListener('mouseout', function () {
 	classListRemove(controls)
+})
+let description = document.querySelector('.header__description')
+let button = document.querySelector('.bth')
+let buttonRight = document.querySelector('.header__bth-right')
+
+description.addEventListener('mouseover', event => {
+	
+	if (event.target.classList.contains('header__bth-right')) {
+		classListAdd(button)
+		classListAdd(buttonRight)
+	}
+	if (event.target.classList.contains('bth')) {
+		classListAdd(button)
+		classListAdd(buttonRight)
+	}
+	
+})
+
+description.addEventListener('mouseout', event => {
+	classListRemove(button)
+	classListRemove(buttonRight)
 })

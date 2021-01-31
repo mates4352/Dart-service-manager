@@ -3,11 +3,19 @@
 	.padding(55px,83px,12px,15px);
 
 	background-color: @main-color;
-	margin-left: 30px;
+	margin: 0 15px;
 	transition: color 500ms ease,background-color 500ms ease,top 1100ms ease;
+
+	@media screen and(max-width:425px) {
+		margin-top: 25px;
+	}
+	@media screen and(max-width:360px) {
+		margin: 0px;
+		margin-top: 25px;
+	}
 }
 
-.header__bth-right:hover{
+.header__bth-right.active{
 	background-color: @tema-color;
 	color: @main-color;
 }

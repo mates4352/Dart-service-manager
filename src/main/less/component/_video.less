@@ -1,28 +1,26 @@
 .media{
+	flex:1 1 50%;
 	&:extend(.pos-rel);
 	overflow: hidden;
-	width: 600px;
-	height: 320px;
-	border: 1px solid @tema-color;
-	border-radius: 5px;
-	box-shadow: 0 3px 5px @tema-color;
+	margin-left: 20px;
 
-	@media screen and(max-width:1023px) {
-		width: 768px;
+	border-radius: 5px;
+	box-shadow: 0 0px 10px  @tema-color;
+
+	@media screen and(max-width:1240px) {
+		flex:1 1 100%;
+		margin-left: 0px;
 	}
 }
 
 .media__video{
+	display: block;
 	.wh(100%,100%);
-	object-fit: cover;
-	object-position: center
 }
 .media-bg{
 	.wh(100%,100%);
 
-	position: absolute;
-	top: 0;
-	left: 0;
+	&:extend(.pos-abs);
 
 	background-color: #061e37ad;
 	transition: opacity 500ms ease;
@@ -42,10 +40,8 @@
 	transform: translateY(100%);
 	transition: transform 1s ease;
 
-	display: flex;
+	.flex-j-a(flex-end,flex-start);
 	flex-direction: column;
-	justify-content: flex-end;
-	align-items: flex;
 
 	background-color: rgba(64, 224, 208, 0.342);
 	box-shadow:inset 0 0px 5px  rgb(248, 106, 113);
@@ -54,6 +50,22 @@
 
 .media-controls.active{
 	transform: translateY(0);
+}
+
+.media__button{
+	display: flex;
+	align-items: center;
+}
+
+.media__radio{
+	margin-left: 25px;
+	width: 50px;
+	background-color: @tema-color;
+}
+
+.media__sound{
+	.font(18px,0,"Raleway_SemiBold",@tema-color);
+	
 }
 
 .media__bth{
@@ -97,6 +109,7 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
+
 	transform: translate(-50%,-50%);
 	transition:border-left 500ms ease;
 }
@@ -144,6 +157,7 @@
 	position: absolute;
 	top: 50%;
 	left: 70%;
+	
 	transform: translate(-50%,-50%);
 	transition:border-left 500ms ease;
 }
@@ -197,11 +211,10 @@
 	background:url("@{way-img}/header/arrow.png") no-repeat center/cover;
 	
 }
-.media__radio{
-	align-self: center;
-	
-}
 
-.media__sound{
-	display: inline-block;
+.media__durationBar-time{
+	.font(18px,0,"Raleway_SemiBold",@tema-color);
+	position: absolute;
+	top: 20px;
+	right: 10px;
 }
