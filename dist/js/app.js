@@ -37,7 +37,7 @@ for (let i = 0; i < bthAss.length; i++) {
 		video.playbackRate = 1;
 	})
 	bthAss[3].addEventListener("click", function () {
-		video.playbackRate = 2;
+		video.playbackRate = 15;
 	})
 }
 

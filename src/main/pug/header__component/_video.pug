@@ -1,12 +1,13 @@
 .header__media.media
 					.media-bg
 					.media-controls
-						div.media__button
+						.media__button
 							button.media__bth.media__bth--controls
 							button.media__bth.media__bth--slowDown
 							button.media__bth.media__bth--normalSpeed
 							button.media__bth.media__bth--speedUp
-						div.media__conteinerBar
-							div.media__durationBar
+							input.media__radio(type="range" value="5" step="0.1")
+						.media__conteinerBar
+							.media__durationBar
 					video.media__video( src="assets/vidao.mp4" type="video/mp4" onTimeUpdate="progressUpdate()") 
 					button.media-bth
