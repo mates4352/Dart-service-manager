@@ -123,13 +123,26 @@ media.addEventListener('click', event => {
 	if (event.target.classList.contains("media__bth--speedUp")) {
 		playbackRate(10)
 	}
-	video.volume = 0
+
 	if (event.target.classList.contains("media__radio")) {
 		video.volume = mediaRadio.value / 100
 		mediaSound.innerHTML = mediaRadio.value + "%"
 	}
 
+	if (event.target.classList.contains("media__bth--volume")) {
+		if (video.volume) {
+			video.volume = 0
+			event.target.classList.add('active')
+		}
+		else {
+			video.volume = 1
+			event.target.classList.remove('active')
+		}
+	}
+
 })
+
+
 
 video.addEventListener('mouseover', function () {
 	ifContainsAddClass()

@@ -4,11 +4,35 @@
 		p.modal__close X
 
 		form.modal__form(action="#")
-			input.modal__input(type="text" placeholder="Name")
-			label(class="modal__label" for="woman") Woman
-			input.modal__input-radio(id="woman" type="radio" Name="radio" value="Woman")
-			label(class="modal__label" for="man") Man
-			input.modal__input-radio(id="man" type="radio" Name="radio" value="Man")
-			input.modal__input(type="email" placeholder="Email")
-			input.modal__input(type="password" placeholder="Password")
-			input.modal__input(type="tel" placeholder="Tel")
+			p.modal__text Your name
+			input.modal__input(required type="text" placeholder="Еnter Name")
+
+			p.modal__text Select gender
+			div.modal__radio-label
+				input.modal__input-radio(tabindex="2" id="woman" type="radio" Name="radio" value="Woman")
+				label.modal__label(for="woman") Woman
+			
+			div.modal__radio-label
+				input.modal__input-radio(required id="man" type="radio" Name="radio" value="Man")
+				label.modal__label(for="man") Man
+			
+			p.modal__text User date of birth
+			input.modal__input-date(required tabindex="2" id="man" type="date" Name="date" )
+
+			p.modal__text User email
+			input.modal__input(required tabindex="3" type="email" placeholder="Еnter Email")
+
+			p.modal__text User password
+			input.modal__input(required tabindex="4" type="password" placeholder="Еnter Password")
+
+			p.modal__text Confirm password
+			input.modal__input(required tabindex="4" type="password" placeholder="Confirm Password")
+
+
+			p.modal__text User phone
+			input.modal__input(required tabindex="5" type="tel" placeholder="Еnter Phone")
+
+			input.modal__input-checkbox(id="personal" type="checkbox" Name="personal")
+			label.modal__label-checkbox(for="personal") I consent to the processing of personal data
+
+			button.bth.modal__bth Отправить
