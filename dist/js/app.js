@@ -25,10 +25,12 @@ let durationBar = document.querySelector(".media__durationBar")
 
 
 let bthControls = document.querySelector('.media__bth--controls')
+let bthVolume = document.querySelector('.media__bth--volume')
 let mediaSound = document.querySelector('.media__sound')
+mediaSound.innerHTML = 100 + "%"
 
 let mediaRadio = document.querySelector('.media__radio')
-mediaSound.innerHTML = 100 + "%"
+
 
 function playbackRate(value) {
 	video.playbackRate = value;
@@ -72,17 +74,15 @@ let durationBarSecond = document.querySelector('.second')
 let durationBarMinute = document.querySelector('.minute')
 let durationBarHour = document.querySelector('.hour')
 
-function progressUpdate() { 
-	durationBar.style.width = (video.currentTime / video.duration * 100) + "%"
-	durationBarSecond.innerHTML = video.currentTime.toFixed() 
-}
+
 
 media.addEventListener('click', event => {
 
 	if (event.target.classList.contains("media__video")) {
 
 		if (video.paused && bthControls.classList.contains('active')) {
-			video.pause()
+			video.play()
+			classListRemove(bthControls)
 		}
 	
 		else if (video.paused) {
@@ -124,27 +124,44 @@ media.addEventListener('click', event => {
 		playbackRate(10)
 	}
 
+	if (event.target.classList.contains("media__conteinerBar")) {
+		console.log(durationBarTime)
+		durationBar.style.width = event.pageX + "px"
+		
+	}
+
 	if (event.target.classList.contains("media__radio")) {
+
+		if (bthVolume.classList.contains("active")) {
+			video.volume = 0
+			mediaSound.innerHTML = mediaRadio.value + "%"
+		}
+		else {
 		video.volume = mediaRadio.value / 100
 		mediaSound.innerHTML = mediaRadio.value + "%"
+		}
+		
 	}
 
 	if (event.target.classList.contains("media__bth--volume")) {
 		if (video.volume) {
 			video.volume = 0
-			event.target.classList.add('active')
+			classListAdd(event.target)
 		}
 		else {
-			video.volume = 1
-			event.target.classList.remove('active')
+			video.volume = mediaRadio.value / 100
+			classListRemove(bthVolume)
 		}
 	}
 
 })
 
+function progressUpdate() { 
+	durationBar.style.width = (video.currentTime / video.duration * 100) + "%"
+	durationBarSecond.innerHTML = video.currentTime.toFixed() 
+}
 
-
-video.addEventListener('mouseover', function () {
+video.addEventListener('mousemove', function () {
 	ifContainsAddClass()
 })
 
@@ -161,22 +178,18 @@ controls.addEventListener('mouseout', function () {
 })
 let description = document.querySelector('.header__description')
 let button = document.querySelector('.bth')
-let buttonRight = document.querySelector('.header__bth-right')
+let buttonColor = document.querySelector('.bth--color')
 
 description.addEventListener('mouseover', event => {
 	
-	if (event.target.classList.contains('header__bth-right')) {
-		classListAdd(button)
-		classListAdd(buttonRight)
-	}
 	if (event.target.classList.contains('bth')) {
 		classListAdd(button)
-		classListAdd(buttonRight)
+		classListAdd(buttonColor)
 	}
 	
 })
 
 description.addEventListener('mouseout', event => {
 	classListRemove(button)
-	classListRemove(buttonRight)
+	classListRemove(buttonColor)
 })

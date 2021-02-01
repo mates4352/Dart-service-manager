@@ -14,6 +14,7 @@
 .modal.active{
 	visibility: visible;
 	opacity: 1;
+	overflow-y: auto;
 }
 .modal__body{
 	width: 50vw;
@@ -29,6 +30,14 @@
 
 	@media screen and (max-width:768px) {
 		width: 100%;
+	}
+
+	@media screen and (max-height:1079px) {
+		width: 100%;
+		position: absolute;
+		top:0%;
+		left:50%;
+		transform: translate(-50%,0%) ;
 	}
 }
 
@@ -66,14 +75,13 @@
 	.font(18px,"Raleway_SemiBold",@main-color);
 	display: inline-flex;
 	align-items: center;
-
 	position: relative;
 }
 .modal__label::before{
 	content:'';
 	flex: 0 0 24px;
 	height: 24px;
-	
+
 	margin-right: 10px;
 
 	background-color:@main-color;
@@ -145,7 +153,7 @@
 .modal__label-checkbox{
 	.font(18px,"Raleway_SemiBold",@main-color);
 	display: inline-flex;
-	margin-top: 25px;
+	margin: 25px 0;
 	position: relative;
 }
 
@@ -180,6 +188,10 @@
 .modal__bth{
 	display: block;
 	margin: 0;
-	margin-top: 25px;
 	box-shadow: 0 2px 5px #000000;
+	transition:color 500ms ease,background-color 500ms ease ;
+}
+.modal__bth:hover{
+	color: @tema-color;
+	background-color: @main-color;
 }
