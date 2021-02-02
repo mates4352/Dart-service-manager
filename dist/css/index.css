@@ -185,7 +185,9 @@ body {
 
 .pos-rel,
 .media,
-.media__bth {
+.media__bth,
+.accordion__label,
+.accordion__image {
   position: relative;
   top: 0;
   left: 0;
@@ -1115,6 +1117,120 @@ body {
   font-size: 2rem;
   font-family: "Raleway_Bold";
   color: #ffffff;
+}
+
+.Services__margin {
+  margin: 100px 0px;
+}
+
+.conteiner_servisec {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.text__services {
+  margin: 30px 0px;
+}
+
+.Services__description {
+  max-width: 550px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.accordion__label {
+  line-height: 1em;
+  font-size: 1.5rem;
+  font-family: "Raleway_Bold";
+  color: #061e37;
+  padding: 25px 0 25px 50px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  -webkit-transition: font-size 500ms;
+  -o-transition: font-size 500ms;
+  transition: font-size 500ms;
+}
+
+.accordion__label:hover {
+  font-size: 25px;
+}
+
+.accordion__label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-top: 5px solid #061e37;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.accordion.active .accordion__label::before {
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #061e37;
+}
+
+.accordion__icon {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.accordion__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 500ms ease;
+  -o-transition: height 500ms ease;
+  transition: height 500ms ease;
+}
+
+.accordion.active .accordion__content {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.accordion__image {
+  width: 100%;
+  padding: 0 0 5% 0;
+}
+
+.accordion__img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.accordion__block-text {
+  height: 100%;
+}
+
+.accordion__text {
+  color: #061e37;
+  padding: 0 15px;
+  margin-bottom: 25px;
+}
+
+.accordion__text:nth-child(1) {
+  margin-top: 0;
 }
 
 /*-footer-*/
