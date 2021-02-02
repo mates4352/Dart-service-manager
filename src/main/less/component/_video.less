@@ -29,7 +29,7 @@
 .media-bg.active{
 	opacity: 0;
 }
-
+//controls
 .media-controls{
 	.wh(100%,50px);
 
@@ -46,7 +46,6 @@
 	background-color: rgba(64, 224, 208, 0.342);
 	box-shadow:inset 0 0px 5px  rgb(248, 106, 113);
 }
-
 
 .media-controls.active{
 	transform: translateY(0);
@@ -220,22 +219,6 @@
 
 }
 
-.media__conteinerBar{
-	.wh(100%,20px);
-	background-color: transparent;
-	box-shadow: inset 0 0 5px @tema-color;
-	border-top-left-radius: 5px;
-	border-top-right-radius:5px;
-}
-
-.media__durationBar{
-	.wh(0%,100%);
-	background-color:#061e37d3 ;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
 .media-bth{
 	.wh(60px,60px);
 
@@ -265,6 +248,22 @@
 	
 	background:url("@{way-img}/header/arrow.png") no-repeat center/cover;
 	
+}
+
+.media__conteinerBar{
+	.wh(100%,20px);
+	background-color: transparent;
+	box-shadow: inset 0 0 5px @tema-color;
+	border-top-left-radius: 5px;
+	border-top-right-radius:5px;
+}
+
+.media__durationBar{
+	.wh(0%,100%);
+	background-color:#061e37d3 ;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .media__durationBar-time{

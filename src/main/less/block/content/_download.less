@@ -1,0 +1,53 @@
+.download__row {
+	display: flex;
+	align-items: center;
+
+	@media screen and(max-width:767px) {
+		flex-wrap: wrap;
+	}
+}
+
+.download__col {
+	.flex-j-a(center,center);
+	flex: 0 1 25%;
+	min-height: 150px;
+	padding: 0 10px;
+
+	@media screen and(max-width:767px) {
+		flex: 0 1 50%;
+	}
+
+	@media screen and(max-width:467px) {
+		flex: 1 1 100%;
+	}
+}
+.download__col--color-one{
+	background-color: @download__col--color-one;
+}
+.download__col--color-two{
+	background-color: @download__col--color-two;
+}
+.download__col--color-three{
+	background-color: @download__col--color-three;
+}
+.download__col--color-four{
+	background-color: @download__col--color-four;
+}
+
+.download__img {
+	padding: 10px;
+	background-color: @main-color;
+	border-radius: 50%;
+}
+
+.download__wrapper {
+	margin-left: 25px;
+}
+
+.download__text {
+	.font(@dow-font,25px,"Raleway_Bold",@main-color)
+}
+
+.header__logo-text {
+	.font(@dow-font,25px,"Raleway_Bold",@main-color)
+}

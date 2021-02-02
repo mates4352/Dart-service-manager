@@ -1,3 +1,5 @@
+
+
 let video = document.querySelector('.media__video')
 let media = document.querySelector('.media')
 let bg= document.querySelector('.media-bg')
@@ -6,13 +8,14 @@ let controls = document.querySelector('.media-controls')
 let progress = document.querySelector('.media__progress')
 let durationBar = document.querySelector(".media__durationBar")
 
-
 let bthControls = document.querySelector('.media__bth--controls')
 let bthVolume = document.querySelector('.media__bth--volume')
 let mediaSound = document.querySelector('.media__sound')
 mediaSound.innerHTML = 100 + "%"
 
 let mediaRadio = document.querySelector('.media__radio')
+
+
 
 
 function playbackRate(value) {
@@ -51,13 +54,6 @@ function classListAdd(value) {
 function classListRemove(value) {
 	value.classList.remove('active')
 }
-
-let durationBarTime = document.querySelector('.media__durationBar-time')
-let durationBarSecond = document.querySelector('.second')
-let durationBarMinute = document.querySelector('.minute')
-let durationBarHour = document.querySelector('.hour')
-
-
 
 media.addEventListener('click', event => {
 
@@ -106,26 +102,7 @@ media.addEventListener('click', event => {
 	if (event.target.classList.contains("media__bth--speedUp")) {
 		playbackRate(10)
 	}
-
-	if (event.target.classList.contains("media__conteinerBar")) {
-		console.log(durationBarTime)
-		durationBar.style.width = event.pageX + "px"
-		
-	}
-
-	if (event.target.classList.contains("media__radio")) {
-
-		if (bthVolume.classList.contains("active")) {
-			video.volume = 0
-			mediaSound.innerHTML = mediaRadio.value + "%"
-		}
-		else {
-		video.volume = mediaRadio.value / 100
-		mediaSound.innerHTML = mediaRadio.value + "%"
-		}
-		
-	}
-
+	
 	if (event.target.classList.contains("media__bth--volume")) {
 		if (video.volume) {
 			video.volume = 0
@@ -137,12 +114,37 @@ media.addEventListener('click', event => {
 		}
 	}
 
+	if (event.target.classList.contains("media__radio")) {
+
+		if (bthVolume.classList.contains("active")) {
+			video.volume = 0
+			mediaSound.innerHTML = mediaRadio.value + "%"
+		}
+		else {
+			video.volume = mediaRadio.value / 100
+			mediaSound.innerHTML = mediaRadio.value + "%"
+		}
+		
+	}
 })
+
+let durationBarTime = document.querySelector('.media__durationBar-time')
+let durationBarSecond = document.querySelector('.second')
+let durationBarMinute = document.querySelector('.minute')
+let durationBarHour = document.querySelector('.hour')
 
 function progressUpdate() { 
 	durationBar.style.width = (video.currentTime / video.duration * 100) + "%"
-	durationBarSecond.innerHTML = video.currentTime.toFixed() 
+	durationBarSecond.innerHTML = video.currentTime.toFixed()
 }
+
+let mediaConteinerBar = document.querySelector('.media__conteinerBar')
+
+mediaConteinerBar.addEventListener('click', function (event) {
+	let leftMargin = mediaConteinerBar.getBoundingClientRect().left
+	let time =((event.pageX - leftMargin) / mediaConteinerBar.offsetWidth  ) * video.duration 
+	video.currentTime = time
+})
 
 video.addEventListener('mousemove', function () {
 	ifContainsAddClass()
