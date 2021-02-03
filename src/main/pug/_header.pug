@@ -32,6 +32,7 @@ header.header.header--bg
 				.header__media.media
 					.media-bg
 					.media-controls
+
 						.media__button
 							button.media__bth.media__bth--controls
 							button.media__bth.media__bth--slowDown
@@ -40,9 +41,12 @@ header.header.header--bg
 							button.media__bth.media__bth--volume
 							input.media__radio(type="range" value="100" max="100" step="1")
 							p.media__sound 0
+
 						.media__conteinerBar
 							p.media__durationBar-time <span class="hour">0</span>:<span class="minute">0</span>:<span class="second">0</span>
 							.media__durationBar
+
 					video.media__video( src="assets/vidao.mp4" type="video/mp4" onTimeUpdate="progressUpdate()") 
 					button.media-bth
+					.menu
 				
