@@ -15,20 +15,10 @@ mediaSound.innerHTML = 100 + "%"
 
 let mediaRadio = document.querySelector('.media__radio')
 
-
-
-
-function playbackRate(value) {
-	video.playbackRate = value;
-}
-
-function classListToggle(value) {
-	value.classList.toggle('active')
-}
-
 function videoPlay() {
 	video.play()
 }
+
 function videoPause() {
 	video.pause()
 }
@@ -47,12 +37,8 @@ function ifContainsAddClass() {
 	}
 }
 
-function classListAdd(value) {
-	value.classList.add('active')
-}
-
-function classListRemove(value) {
-	value.classList.remove('active')
+function playbackRate(value) {
+	video.playbackRate = value;
 }
 
 media.addEventListener('click', event => {

@@ -7,10 +7,3 @@ accordion.forEach(function (event) {
 	})
 })
 
-// document.addEventListener('click', event => {
-// 	if (event.target.classList.contains("accordion__label")) {
-// 		classListToggle(event.target)
-		
-// 	}
-	
-// })

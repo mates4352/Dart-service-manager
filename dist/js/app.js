@@ -1,28 +1,51 @@
 "use strict"
+
+function classListToggle(value) {
+	value.classList.toggle('active')
+}
+
+function classListAdd(value) {
+	value.classList.add('active')
+}
+
+function classListRemove(value) {
+	value.classList.remove('active')
+}
+
+function classListContains(value) {
+	value.classList.contains('active')
+}
+let menu = document.querySelector('.menu')
+
+
 window.addEventListener('resize', function () {
 	adaptive_function();
+	adaptive_header(w, h)
 })
-
+	
 function adaptive_header(w, h) {
-	let menu = document.querySelector('.menu')
 	let headerMenu = document.querySelector('.header__nav')
+	let nav = document.querySelector('.nav__list')
+	
 	
 	if (w < 420) {
 
-		if (!menu.classList.contains('done')) {
-			menu.classList.add('done')
+		if (!nav.classList.contains('done')) {
+			nav.classList.add('done')
 			menu.innerHTML = ''
 			menu.innerHTML = headerMenu.innerHTML
 			headerMenu.innerHTML = ''
-
 		}
 	}
+
 	else {
-		if (menu.classList.contains('done')) {
-			menu.classList.remove('done')
+
+		if (nav.classList.contains('done')) {
+			nav.classList.remove('done')
 			headerMenu.innerHTML = menu.innerHTML
 			menu.innerHTML = ''
 		}
+
 	}
 }
 
@@ -33,6 +56,13 @@ function adaptive_function() {
 }
 
 adaptive_function()
+
+let burger = document.querySelector('.burger')
+
+burger.addEventListener("click", function () {
+	classListToggle(burger)
+	classListToggle(menu)
+})
 let modal = document.querySelector('.modal')
 let modalbody = document.querySelector('.modal__body')
 let bth = document.querySelector('.header__bth')
@@ -66,20 +96,10 @@ mediaSound.innerHTML = 100 + "%"
 
 let mediaRadio = document.querySelector('.media__radio')
 
-
-
-
-function playbackRate(value) {
-	video.playbackRate = value;
-}
-
-function classListToggle(value) {
-	value.classList.toggle('active')
-}
-
 function videoPlay() {
 	video.play()
 }
+
 function videoPause() {
 	video.pause()
 }
@@ -98,12 +118,8 @@ function ifContainsAddClass() {
 	}
 }
 
-function classListAdd(value) {
-	value.classList.add('active')
-}
-
-function classListRemove(value) {
-	value.classList.remove('active')
+function playbackRate(value) {
+	video.playbackRate = value;
 }
 
 media.addEventListener('click', event => {
@@ -237,11 +253,3 @@ accordion.forEach(function (event) {
 		this.classList.toggle("active")
 	})
 })
-
-// document.addEventListener('click', event => {
-// 	if (event.target.classList.contains("accordion__label")) {
-// 		classListToggle(event.target)
-		
-// 	}
-	
-// })

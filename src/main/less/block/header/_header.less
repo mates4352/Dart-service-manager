@@ -41,31 +41,49 @@
 .header__logo-title{
 	.font(15px,15px,"Raleway_Bold",@main-color);
 	text-transform: uppercase;
-}
 
-.header__nav {
-	@media screen and(max-width:768px) {
-		margin: 50px 0;
+	@media screen and(max-width:420px) {
+		margin-bottom: 50px;
 	}
 }
 
-.nav__link {
-	.font(15px,25px,"Raleway_SemiBold",@main-color);
+.header__nav {
+	
+	@media screen and(max-width:768px) {
+		margin: 50px 0;
+	}
+
+	@media screen and(max-width:420px) {
+		display: none;
+	}
+}
+
+.nav__list{
+	display: flex;
+}
+
+.nav__items{
 	margin-left:50px;
-	transition: color 500ms ease;
 
 	@media screen and(max-width:550px) {
 		margin-left:25px;
 	}
 }
 
-.nav__link:first-child{
+.nav__items:first-child{
 	margin-left:0px;
 
 	@media screen and(max-width:550px) {
 		
 	}
 }
+
+.nav__link {
+	.font(15px,25px,"Raleway_SemiBold",@main-color);
+	transition: color 500ms ease;
+}
+
+
 
 .nav__link:hover{
 	color:@tema-color;

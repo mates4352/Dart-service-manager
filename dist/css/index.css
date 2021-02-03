@@ -273,6 +273,80 @@ body {
   border: 1px solid #061e37;
 }
 
+.burger {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 15%;
+  left: 25px;
+  z-index: 11111;
+  display: none;
+}
+
+.burger span,
+.burger::before,
+.burger::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #061e37;
+  -webkit-box-shadow: 0 0 2px #061e37;
+  box-shadow: 0 0 2px #061e37;
+  -webkit-transition: top 500ms ease,-webkit-transform 500ms ease;
+  transition: top 500ms ease,-webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease,top 500ms ease;
+  transition: transform 500ms ease,top 500ms ease;
+  transition: transform 500ms ease,top 500ms ease,-webkit-transform 500ms ease;
+}
+
+.burger::before {
+  top: 100%;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: top 500ms ease,-webkit-transform 500ms ease;
+  transition: top 500ms ease,-webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease,top 500ms ease;
+  transition: transform 500ms ease,top 500ms ease;
+  transition: transform 500ms ease,top 500ms ease,-webkit-transform 500ms ease;
+}
+
+.burger span {
+  top: 50%;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease,-webkit-transform 500ms ease;
+}
+
+.burger.active::after {
+  top: 50%;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.burger.active::before {
+  top: 50%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.burger.active span {
+  top: 50%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
 .modal {
   width: 100vw;
   height: 100vh;
@@ -866,6 +940,56 @@ body {
   right: 10px;
 }
 
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  -webkit-transform: translate(-120%);
+  -ms-transform: translate(-120%);
+  transform: translate(-120%);
+  -webkit-transition: visibility 500ms ease,-webkit-transform 500ms ease;
+  transition: visibility 500ms ease,-webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease,visibility 500ms ease;
+  transition: transform 500ms ease,visibility 500ms ease;
+  transition: transform 500ms ease,visibility 500ms ease,-webkit-transform 500ms ease;
+}
+
+.menu.active {
+  visibility: visible;
+  -webkit-transform: translate(0%);
+  -ms-transform: translate(0%);
+  transform: translate(0%);
+}
+
+.nav__list.done {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav__list.done .nav__items {
+  margin: 25px 0 25px 0;
+}
+
+.nav__list.done .nav__link {
+  font-size: 35px;
+}
+
 /*-Header-*/
 
 .header--bg {
@@ -916,19 +1040,28 @@ body {
   text-transform: uppercase;
 }
 
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav__items {
+  margin-left: 50px;
+}
+
+.nav__items:first-child {
+  margin-left: 0px;
+}
+
 .nav__link {
   line-height: 1.7em;
   font-size: 1.5rem;
   font-family: "Raleway_SemiBold";
   color: #ffffff;
-  margin-left: 50px;
   -webkit-transition: color 500ms ease;
   -o-transition: color 500ms ease;
   transition: color 500ms ease;
-}
-
-.nav__link:first-child {
-  margin-left: 0px;
 }
 
 .nav__link:hover {
@@ -1338,7 +1471,7 @@ body {
 }
 
 @media screen and (max-width: 550px) {
-  .nav__link {
+  .nav__items {
     margin-left: 25px;
   }
 }
@@ -1354,6 +1487,20 @@ body {
 @media screen and (max-width: 465px) {
   .bth {
     margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .burger {
+    display: block;
+  }
+
+  .header__logo-title {
+    margin-bottom: 50px;
+  }
+
+  .header__nav {
+    display: none;
   }
 }
 
@@ -1430,6 +1577,14 @@ body {
 }
 
  @media screen and (max-width: 465px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 420px){
 
 @supports (-webkit-appearance:none){
 
