@@ -4,16 +4,23 @@ let slaider = document.querySelector('.about__slaider')
 
 
 
-arrowTop.onclick = function () {
-	let wrapper = slaider.firstElementChild
-	slaider.append(wrapper)
-	
-}
+document.querySelector('.about__col-right').addEventListener( 'click', (event) => {
 
-arrowBot.onclick = function () {
-	let wrapper = slaider.lastElementChild
-	slaider.prepend(wrapper)
-}
+	if (event.target.classList.contains('about__arrow-top')) {
+
+		let wrapper = slaider.firstElementChild
+		slaider.append(wrapper)
+
+	}
+	
+	if (event.target.classList.contains('about__arrow-bot')) {
+		
+		let wrapper = slaider.lastElementChild
+		slaider.prepend(wrapper)
+
+	}
+
+})
 
 
 console.log(slaider.children);

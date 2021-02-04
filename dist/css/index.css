@@ -1625,6 +1625,12 @@ body {
     flex-direction: column;
   }
 
+  .accordion__image {
+    margin: 0 auto;
+    max-width: 350px;
+    padding: 0 0 25% 0;
+  }
+
   .accordion__text {
     margin: 25px 0;
     padding: 0 5px;

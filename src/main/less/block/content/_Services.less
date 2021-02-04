@@ -81,8 +81,16 @@
 .accordion__image{
 	&:extend(.pos-rel);
 	width: 100%;
+	
 
 	padding: 0 0 25% 0;
+
+	
+	@media screen and(max-width:768px) {
+		margin: 0 auto;
+		max-width: 350px;
+		padding: 0 0 25% 0;
+	}
 }
 .accordion__img{
 	.wh(100%,100%);
