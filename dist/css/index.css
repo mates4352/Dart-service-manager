@@ -1402,7 +1402,7 @@ body {
   flex: 0 1 58%;
 }
 
-.about__arrow-bot {
+.about__arrow-top {
   width: 25px;
   height: 25px;
   position: absolute;
@@ -1412,9 +1412,19 @@ body {
   -ms-transform: translate(55%, -100%) rotate(-180deg);
   transform: translate(55%, -100%) rotate(-180deg);
   background: url("../assets/images/about/arrow.png") no-repeat center/cover;
+  -webkit-transition: top 100ms ease;
+  -o-transition: top 100ms ease;
+  transition: top 100ms ease;
 }
 
-.about__arrow-top {
+.about__arrow-top:active {
+  top: -30px;
+  -webkit-transition: top 100ms ease;
+  -o-transition: top 100ms ease;
+  transition: top 100ms ease;
+}
+
+.about__arrow-bot {
   width: 25px;
   height: 25px;
   position: absolute;
@@ -1424,6 +1434,13 @@ body {
   -ms-transform: translate(55%, 100%);
   transform: translate(55%, 100%);
   background: url("../assets/images/about/arrow.png") no-repeat center/cover;
+  -webkit-transition: bottom 100ms ease;
+  -o-transition: bottom 100ms ease;
+  transition: bottom 100ms ease;
+}
+
+.about__arrow-bot:active {
+  bottom: -30px;
 }
 
 .about__title {
@@ -1444,10 +1461,21 @@ body {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 70px;
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease,-webkit-transform 500ms ease;
 }
 
 .about__wrapper:last-child {
   margin-bottom: 0px;
+}
+
+.about__wrapper.active {
+  -webkit-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
 }
 
 .about__cite {
@@ -1549,19 +1577,19 @@ body {
     flex: 1 1 100%;
   }
 
-  .about__arrow-bot {
+  .about__arrow-top {
     top: -10px;
     left: 50%;
-    -webkit-transform: translate(-55%, -100%) rotate(-90deg);
-    -ms-transform: translate(-55%, -100%) rotate(-90deg);
-    transform: translate(-55%, -100%) rotate(-90deg);
+    -webkit-transform: translate(-55%, -100%) rotate(180deg);
+    -ms-transform: translate(-55%, -100%) rotate(180deg);
+    transform: translate(-55%, -100%) rotate(180deg);
   }
 
-  .about__arrow-top {
+  .about__arrow-bot {
     left: 50%;
-    -webkit-transform: translate(-50%, 100%) rotate(90deg);
-    -ms-transform: translate(-50%, 100%) rotate(90deg);
-    transform: translate(-50%, 100%) rotate(90deg);
+    -webkit-transform: translate(-50%, 100%);
+    -ms-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
   }
 
   .about__wrapper {
@@ -1680,8 +1708,8 @@ body {
 .media-bth::before{background:url("../assets/images/header/arrow.webp") no-repeat center/cover}
 .header--bg{background:url("../assets/images/header/bg.webp") no-repeat center/cover}
 .about--bg{background:url("../assets/images/about/bg.webp") no-repeat center/cover}
-.about__arrow-bot{background:url("../assets/images/about/arrow.webp") no-repeat center/cover}
 .about__arrow-top{background:url("../assets/images/about/arrow.webp") no-repeat center/cover}
+.about__arrow-bot{background:url("../assets/images/about/arrow.webp") no-repeat center/cover}
 }
 
  @media screen and (max-width: 1449px){

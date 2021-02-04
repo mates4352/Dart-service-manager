@@ -33,12 +33,13 @@
 	&:extend(.pos-rel);
 	flex: 0 1 58%;
 
+
 	@media screen and(max-width:1023px) {
 		flex:1 1 100%;
 	}
 }
 
-.about__arrow-bot{
+.about__arrow-top{
 	.wh(25px,25px);
 
 	position:absolute;
@@ -47,15 +48,22 @@
 
 	transform: translate(55%,-100%) rotate(-180deg);
 	background:url("@{way-img}/about/arrow.png") no-repeat center/cover;
+	transition: top 100ms ease;
 
 	@media screen and(max-width:1023px) {
 		top:-10px;
 		left:50%;
-		transform: translate(-55%,-100%) rotate(-90deg);
+		transform: translate(-55%,-100%) rotate(180deg);
 	}
 }
 
-.about__arrow-top{
+.about__arrow-top:active{
+	top:-30px;
+	transition: top 100ms ease;
+}
+
+
+.about__arrow-bot{
 	.wh(25px,25px);
 
 	position:absolute;
@@ -64,11 +72,16 @@
 
 	transform: translate(55%,100%);
 	background:url("@{way-img}/about/arrow.png") no-repeat center/cover;
-
+	transition: bottom 100ms ease;
 	@media screen and(max-width:1023px) {
 		left:50%;
-		transform: translate(-50%,100%) rotate(90deg);
+		transform: translate(-50%,100%);
 	}
+}
+
+.about__arrow-bot:active{
+	bottom:-30px;
+
 }
 
 .about__title{
@@ -87,6 +100,7 @@
 .about__wrapper {
 	display: flex;
 	margin-bottom: 70px;
+	transition: transform 500ms ease;
 
 	@media screen and(max-width:1023px) {
 		display: block;
@@ -95,6 +109,10 @@
 
 .about__wrapper:last-child {
 	margin-bottom: 0px;
+}
+
+.about__wrapper.active{
+	transform: translateY(-200%)
 }
 
 .about__cite{
