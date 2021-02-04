@@ -187,7 +187,8 @@ body {
 .media,
 .media__bth,
 .accordion__label,
-.accordion__image {
+.accordion__image,
+.about__review {
   position: relative;
   top: 0;
   left: 0;
@@ -271,6 +272,11 @@ body {
 
 .header__bth:hover {
   border: 1px solid #061e37;
+}
+
+.about__bth:hover {
+  background-color: #ffffff;
+  color: #061e37;
 }
 
 .burger {
@@ -1285,10 +1291,6 @@ body {
   transition: font-size 500ms;
 }
 
-.accordion__label:hover {
-  font-size: 25px;
-}
-
 .accordion__label::before {
   content: "";
   position: absolute;
@@ -1337,7 +1339,7 @@ body {
 
 .accordion__image {
   width: 100%;
-  padding: 0 0 5% 0;
+  padding: 0 0 25% 0;
 }
 
 .accordion__img {
@@ -1364,6 +1366,106 @@ body {
 
 .accordion__text:nth-child(1) {
   margin-top: 0;
+}
+
+.about {
+  display: block;
+  min-height: 565px;
+}
+
+.about--bg {
+  background: url("../assets/images/about/bg.png") no-repeat center/cover;
+}
+
+.about__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 80px 0;
+}
+
+.about__col-left {
+  max-width: 510px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 45%;
+  flex: 0 1 45%;
+  padding: 47px 0 55px 0;
+}
+
+.about__col-right {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 58%;
+  flex: 0 1 58%;
+}
+
+.about__title {
+  color: #ffffff;
+}
+
+.text--white {
+  color: #ffffff;
+}
+
+.about__text {
+  color: #ffffff;
+  margin: 10px 0 75px 0;
+}
+
+.about__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 70px;
+}
+
+.about__wrapper:last-child {
+  margin-bottom: 0px;
+}
+
+.about__cite {
+  line-height: 1.4em;
+  font-size: 1.8rem;
+  font-family: "Raleway_Bold";
+  color: #061e37;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about__img {
+  margin: 50px 50px 0 50px;
+}
+
+.about__review {
+  min-height: 160px;
+  padding: 30px 60px 30px 30px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.about__arrow-bot {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%) rotate(-180deg);
+  -ms-transform: translate(-50%, -100%) rotate(-180deg);
+  transform: translate(-50%, -100%) rotate(-180deg);
+  background: url("../assets/images/about/arrow.png") no-repeat center/cover;
+}
+
+.about__arrow-top {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+  -ms-transform: translate(-50%, 100%);
+  transform: translate(-50%, 100%);
+  background: url("../assets/images/about/arrow.png") no-repeat center/cover;
 }
 
 /*-footer-*/
@@ -1423,6 +1525,47 @@ body {
     -ms-flex: 0 1 50%;
     flex: 0 1 50%;
   }
+
+  .about__row {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .about__col-left {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about__col-right {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+  }
+
+  .about__wrapper {
+    display: block;
+  }
+
+  .about__img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .about__arrow-bot {
+    top: -80px;
+    -webkit-transform: translate(-50%, -100%) rotate(-90deg);
+    -ms-transform: translate(-50%, -100%) rotate(-90deg);
+    transform: translate(-50%, -100%) rotate(-90deg);
+  }
+
+  .about__arrow-top {
+    -webkit-transform: translate(-50%, 100%) rotate(90deg);
+    -ms-transform: translate(-50%, 100%) rotate(90deg);
+    transform: translate(-50%, 100%) rotate(90deg);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1439,6 +1582,18 @@ body {
 
   .header__nav {
     margin: 50px 0;
+  }
+
+  .accordion__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .accordion__text {
+    margin: 25px 0;
+    padding: 0 5px;
   }
 }
 
@@ -1518,6 +1673,9 @@ body {
 @supports (-webkit-appearance:none){
 .media-bth::before{background:url("../assets/images/header/arrow.webp") no-repeat center/cover}
 .header--bg{background:url("../assets/images/header/bg.webp") no-repeat center/cover}
+.about--bg{background:url("../assets/images/about/bg.webp") no-repeat center/cover}
+.about__arrow-bot{background:url("../assets/images/about/arrow.webp") no-repeat center/cover}
+.about__arrow-top{background:url("../assets/images/about/arrow.webp") no-repeat center/cover}
 }
 
  @media screen and (max-width: 1449px){

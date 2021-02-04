@@ -27,7 +27,6 @@ function adaptive_header(w, h) {
 	let headerMenu = document.querySelector('.header__nav')
 	let nav = document.querySelector('.nav__list')
 	
-	
 	if (w < 420) {
 
 		if (!nav.classList.contains('done')) {
