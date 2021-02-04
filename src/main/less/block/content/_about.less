@@ -30,10 +30,44 @@
 }
 
 .about__col-right{
+	&:extend(.pos-rel);
 	flex: 0 1 58%;
 
 	@media screen and(max-width:1023px) {
 		flex:1 1 100%;
+	}
+}
+
+.about__arrow-bot{
+	.wh(25px,25px);
+
+	position:absolute;
+	top:-25px;
+	left:55%;
+
+	transform: translate(55%,-100%) rotate(-180deg);
+	background:url("@{way-img}/about/arrow.png") no-repeat center/cover;
+
+	@media screen and(max-width:1023px) {
+		top:-10px;
+		left:50%;
+		transform: translate(-55%,-100%) rotate(-90deg);
+	}
+}
+
+.about__arrow-top{
+	.wh(25px,25px);
+
+	position:absolute;
+	bottom:-25px;
+	left:55%;
+
+	transform: translate(55%,100%);
+	background:url("@{way-img}/about/arrow.png") no-repeat center/cover;
+
+	@media screen and(max-width:1023px) {
+		left:50%;
+		transform: translate(-50%,100%) rotate(90deg);
 	}
 }
 
@@ -79,7 +113,6 @@
 }
 
 .about__review {
-	&:extend(.pos-rel);
 	min-height: 160px;
 	padding: 30px 60px 30px 30px;
 
@@ -88,33 +121,3 @@
 	border-radius:5px;
 }
 
-.about__arrow-bot{
-	.wh(25px,25px);
-
-	position:absolute;
-	top:-25px;
-	left:50%;
-
-	transform: translate(-50%,-100%) rotate(-180deg);
-	background:url("@{way-img}/about/arrow.png") no-repeat center/cover;
-
-	@media screen and(max-width:1023px) {
-		top:-80px;
-		transform: translate(-50%,-100%) rotate(-90deg);
-	}
-}
-
-.about__arrow-top{
-	.wh(25px,25px);
-
-	position:absolute;
-	bottom:-25px;
-	left:50%;
-
-	transform: translate(-50%,100%);
-	background:url("@{way-img}/about/arrow.png") no-repeat center/cover;
-
-	@media screen and(max-width:1023px) {
-		transform: translate(-50%,100%) rotate(90deg);
-	}
-}

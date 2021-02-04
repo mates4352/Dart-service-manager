@@ -188,7 +188,7 @@ body {
 .media__bth,
 .accordion__label,
 .accordion__image,
-.about__review {
+.about__col-right {
   position: relative;
   top: 0;
   left: 0;
@@ -1402,6 +1402,30 @@ body {
   flex: 0 1 58%;
 }
 
+.about__arrow-bot {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -25px;
+  left: 55%;
+  -webkit-transform: translate(55%, -100%) rotate(-180deg);
+  -ms-transform: translate(55%, -100%) rotate(-180deg);
+  transform: translate(55%, -100%) rotate(-180deg);
+  background: url("../assets/images/about/arrow.png") no-repeat center/cover;
+}
+
+.about__arrow-top {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: -25px;
+  left: 55%;
+  -webkit-transform: translate(55%, 100%);
+  -ms-transform: translate(55%, 100%);
+  transform: translate(55%, 100%);
+  background: url("../assets/images/about/arrow.png") no-repeat center/cover;
+}
+
 .about__title {
   color: #ffffff;
 }
@@ -1446,30 +1470,6 @@ body {
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-}
-
-.about__arrow-bot {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  -webkit-transform: translate(-50%, -100%) rotate(-180deg);
-  -ms-transform: translate(-50%, -100%) rotate(-180deg);
-  transform: translate(-50%, -100%) rotate(-180deg);
-  background: url("../assets/images/about/arrow.png") no-repeat center/cover;
-}
-
-.about__arrow-top {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  -webkit-transform: translate(-50%, 100%);
-  -ms-transform: translate(-50%, 100%);
-  transform: translate(-50%, 100%);
-  background: url("../assets/images/about/arrow.png") no-repeat center/cover;
 }
 
 /*-footer-*/
@@ -1549,6 +1549,21 @@ body {
     flex: 1 1 100%;
   }
 
+  .about__arrow-bot {
+    top: -10px;
+    left: 50%;
+    -webkit-transform: translate(-55%, -100%) rotate(-90deg);
+    -ms-transform: translate(-55%, -100%) rotate(-90deg);
+    transform: translate(-55%, -100%) rotate(-90deg);
+  }
+
+  .about__arrow-top {
+    left: 50%;
+    -webkit-transform: translate(-50%, 100%) rotate(90deg);
+    -ms-transform: translate(-50%, 100%) rotate(90deg);
+    transform: translate(-50%, 100%) rotate(90deg);
+  }
+
   .about__wrapper {
     display: block;
   }
@@ -1556,19 +1571,6 @@ body {
   .about__img {
     margin: 0 auto;
     display: block;
-  }
-
-  .about__arrow-bot {
-    top: -80px;
-    -webkit-transform: translate(-50%, -100%) rotate(-90deg);
-    -ms-transform: translate(-50%, -100%) rotate(-90deg);
-    transform: translate(-50%, -100%) rotate(-90deg);
-  }
-
-  .about__arrow-top {
-    -webkit-transform: translate(-50%, 100%) rotate(90deg);
-    -ms-transform: translate(-50%, 100%) rotate(90deg);
-    transform: translate(-50%, 100%) rotate(90deg);
   }
 }
 
