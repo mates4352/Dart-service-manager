@@ -19,14 +19,31 @@
 }
 
 .accordion__label {
-	&:extend(.pos-rel);
 	.font(15px,15px,"Raleway_Bold",@tema-color);
-	padding: 25px 0 25px 50px;
+	&:extend(.pos-rel);
+	
+	display: block;
+	height: 50px;
+	padding: 18px 0 0 25px;
 
 	text-transform: uppercase;
 	border-radius: 15px;
 
-	transition: font-size 500ms;
+	transition: font-size 500ms,background-color 500ms ease;
+}
+
+.accoration__input{
+	display: none;
+}
+
+.accoration__input:checked ~ .accordion__content{
+	height: 200px;
+	overflow-y: auto;
+}
+
+.accoration__input:checked ~ .accordion__label::before{
+	border-top: @ser-bd solid transparent;
+	border-bottom: @ser-bd solid @tema-color;
 }
 
 .accordion__label::before {
@@ -37,17 +54,10 @@
 	right:5%;
 	transform:translateY(-50%);
 
-	border-top: 5px solid @tema-color;
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-}
-
-.accordion.active .accordion__label::before{
-	border-top: 5px solid transparent;
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	border-bottom: 5px solid @tema-color;
+	border-top: @ser-bd solid @tema-color;
+	border-left: @ser-bd solid transparent;
+	border-right: @ser-bd solid transparent;
+	border-bottom: @ser-bd solid transparent;
 }
 
 .accordion__icon{
@@ -68,10 +78,6 @@
 	}
 }
 
-.accordion.active .accordion__content {
-	height: 200px;
-	overflow-y: auto;
-}
 .accordion__image{
 	&:extend(.pos-rel);
 	width: 100%;
@@ -79,8 +85,7 @@
 	padding: 0 0 25% 0;
 }
 .accordion__img{
-	width: 100%;
-	height: 100%;
+	.wh(100%,100%);
 
 	position:absolute;
 	top:0;
@@ -105,7 +110,4 @@
 
 .accordion__text:nth-child(1){
 	margin-top: 0;
-}
-
-.accordion__img {
 }

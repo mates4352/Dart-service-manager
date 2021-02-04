@@ -1283,12 +1283,28 @@ body {
   font-size: 1.5rem;
   font-family: "Raleway_Bold";
   color: #061e37;
-  padding: 25px 0 25px 50px;
+  display: block;
+  height: 50px;
+  padding: 18px 0 0 25px;
   text-transform: uppercase;
   border-radius: 15px;
-  -webkit-transition: font-size 500ms;
-  -o-transition: font-size 500ms;
-  transition: font-size 500ms;
+  -webkit-transition: font-size 500ms,background-color 500ms ease;
+  -o-transition: font-size 500ms,background-color 500ms ease;
+  transition: font-size 500ms,background-color 500ms ease;
+}
+
+.accoration__input {
+  display: none;
+}
+
+.accoration__input:checked ~ .accordion__content {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.accoration__input:checked ~ .accordion__label::before {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid #061e37;
 }
 
 .accordion__label::before {
@@ -1303,13 +1319,6 @@ body {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 5px solid transparent;
-}
-
-.accordion.active .accordion__label::before {
-  border-top: 5px solid transparent;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid #061e37;
 }
 
 .accordion__icon {
@@ -1330,11 +1339,6 @@ body {
   -webkit-transition: height 500ms ease;
   -o-transition: height 500ms ease;
   transition: height 500ms ease;
-}
-
-.accordion.active .accordion__content {
-  height: 200px;
-  overflow-y: auto;
 }
 
 .accordion__image {

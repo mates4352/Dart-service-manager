@@ -245,10 +245,10 @@ description.addEventListener('mouseout', event => {
 	classListRemove(buttonColor)
 })
 
-let accordion = document.querySelectorAll('.accordion')
+// let accordion = document.querySelectorAll('.accordion')
 
-accordion.forEach(function (event) {
-	event.addEventListener('click', function () {
-		this.classList.toggle("active")
-	})
-})
+// accordion.forEach(function (event) {
+// 	event.addEventListener('click', function () {
+// 		this.classList.toggle("active")
+// 	})
+// })
