@@ -1,6 +1,5 @@
 let menu = document.querySelector('.menu')
 
-
 window.addEventListener('resize', function () {
 	adaptive_function();
 	adaptive_header(w, h)
