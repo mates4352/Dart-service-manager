@@ -63,7 +63,7 @@ burger.addEventListener("click", function () {
 })
 let modal = document.querySelector('.modal')
 let modalbody = document.querySelector('.modal__body')
-let bth = document.querySelector('.header__bth')
+let bth = document.querySelector('.header__bth-menu')
 let close = document.querySelector('.modal__close')
 
 close.addEventListener('click', function () {

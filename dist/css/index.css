@@ -179,6 +179,47 @@ body {
   color: #ffffff;
 }
 
+@font-face {
+  font-family: 'icons';
+  src: url('../assets/fonts/icons.ttf?sl93tm') format('truetype'),url('../assets/fonts/icons.woff?sl93tm') format('woff'),url('../assets/fonts/icons.svg?sl93tm#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon-"]::before,
+[class*="_icon-"]::before {
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-mail:before {
+  content: "\e900";
+}
+
+._icon-be:before {
+  content: "\e901";
+}
+
+._icon-vk:before {
+  content: "\e902";
+}
+
+._icon-fe:before {
+  content: "\e903";
+}
+
+._icon-tw:before {
+  content: "\e904";
+}
+
 /*-elements-*/
 
 .pos-rel,
@@ -947,10 +988,13 @@ body {
   -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  margin: 0 25px;
   -webkit-transition: color 500ms ease,background-color 500ms ease;
   -o-transition: color 500ms ease,background-color 500ms ease;
   transition: color 500ms ease,background-color 500ms ease;
+}
+
+.header__bth {
+  margin-right: 50px;
 }
 
 .bth.active {
@@ -973,7 +1017,7 @@ body {
   color: #fff;
 }
 
-.header__bth {
+.header__bth-menu {
   line-height: 2.1em;
   font-size: 1.2rem;
   font-family: "Raleway_Regular";
@@ -987,7 +1031,7 @@ body {
   transition: border 500ms ease;
 }
 
-.header__bth:hover {
+.header__bth-menu:hover {
   border: 1px solid #061e37;
 }
 
@@ -1012,6 +1056,11 @@ body {
 .about__bth:hover {
   background-color: #ffffff;
   color: #061e37;
+  margin: 0;
+}
+
+.about__bth {
+  margin: 0;
 }
 
 /*-Header-*/
@@ -1021,11 +1070,14 @@ body {
   min-height: 100vh;
 }
 
+.header__padding {
+  padding: 50px 0;
+}
+
 .conteiner {
   max-width: 1450px;
   margin: 0 auto;
   padding: 0 10px;
-  border: 1px solid #000;
 }
 
 .header__top {
@@ -1038,7 +1090,6 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 50px;
 }
 
 .header__top-col {
@@ -1101,7 +1152,6 @@ body {
   -ms-flex-align: center;
   align-items: center;
   height: 100%;
-  margin: 20px 0;
   min-height: 100vh;
 }
 
@@ -1120,15 +1170,13 @@ body {
   padding-right: 100px;
 }
 
-.text {
+.header__text {
   line-height: 1.9em;
   font-size: 1.8rem;
   font-family: "Raleway_Regular";
   color: #ffffff;
-}
-
-.header__text {
-  margin: 10px 0px 25px 0px;
+  margin: 25px 0;
+  max-width: 580px;
 }
 
 /*-Content-*/
@@ -1197,6 +1245,20 @@ body {
 .useful__text {
   margin-top: 20px;
   color: #78909c;
+}
+
+.useful__bth {
+  display: block;
+  margin: 80px auto 0 auto;
+  background-color: #1de9b6;
+  text-transform: uppercase;
+  -webkit-transition: background-color 500ms ease;
+  -o-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+}
+
+.useful__bth:hover {
+  background-color: #0e6b54;
 }
 
 .download__row {
@@ -1349,7 +1411,7 @@ body {
 }
 
 .accordion__image {
-  width: 100%;
+  width: 80%;
   padding: 0 0 25% 0;
 }
 
@@ -1373,6 +1435,7 @@ body {
   color: #061e37;
   padding: 0 15px;
   margin-bottom: 25px;
+  text-align: left;
 }
 
 .accordion__text:nth-child(1) {
@@ -1388,12 +1451,14 @@ body {
   background: url("../assets/images/about/bg.png") no-repeat center/cover;
 }
 
+.about__padding {
+  padding: 80px 0;
+}
+
 .about__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 80px 0;
-  border: 1px solid #000;
 }
 
 .about__col-left {
@@ -1458,6 +1523,7 @@ body {
 
 .about__title {
   color: #ffffff;
+  text-align: left;
 }
 
 .text--white {
@@ -1465,8 +1531,13 @@ body {
 }
 
 .about__text {
-  color: #ffffff;
+  text-align: left;
   margin: 10px 0 75px 0;
+}
+
+.about__review-text {
+  text-align: left;
+  max-width: none;
 }
 
 .about__wrapper {
@@ -1506,14 +1577,8 @@ body {
   padding: 100px 0;
 }
 
-.team__title {
-  text-align: center;
-}
-
 .team__text {
-  max-width: 550px;
   margin: 20px auto 20px auto;
-  text-align: center;
 }
 
 .slider-person {
@@ -1562,10 +1627,10 @@ body {
 .socials-item {
   display: inline-block;
   margin: 0 15px;
-  font-size: 25px;
 }
 
 .socials-link {
+  font-size: 25px;
   color: #90a4ae;
   -webkit-transition: color 500ms ease;
   -o-transition: color 500ms ease;
@@ -1765,7 +1830,7 @@ body {
 
 .contect__bth {
   text-transform: uppercase;
-  margin: 0;
+  margin-right: 0px;
 }
 
 .contect__bth[disabled="disabled"] {
@@ -1853,6 +1918,10 @@ body {
     margin-left: 0px;
   }
 
+  .header__bth {
+    margin: 25px 25px 0 25px;
+  }
+
   .header__bottom {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1876,7 +1945,7 @@ body {
   }
 
   .header__text {
-    margin: 10px auto 25px auto;
+    margin: 30px auto 30px auto;
   }
 
   .useful__row {
@@ -1929,8 +1998,24 @@ body {
     transform: translate(-50%, 100%);
   }
 
+  .about__title {
+    text-align: center;
+  }
+
+  .about__text {
+    text-align: center;
+  }
+
+  .about__review-text {
+    text-align: center;
+  }
+
   .about__wrapper {
     display: block;
+  }
+
+  .about__cite {
+    text-align: center;
   }
 
   .about__img {
@@ -1939,11 +2024,7 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .modal__body {
-    width: 100%;
-  }
-
+@media screen and (max-width: 868px) {
   .header__top {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1953,6 +2034,12 @@ body {
 
   .header__nav {
     margin: 50px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal__body {
+    width: 100%;
   }
 
   .accordion__content {
@@ -1969,8 +2056,9 @@ body {
   }
 
   .accordion__text {
-    margin: 25px 0;
+    margin: 25px auto 25px auto;
     padding: 0 5px;
+    text-align: center;
   }
 
   .footer__top {
@@ -2012,10 +2100,6 @@ body {
   .header__title {
     padding-right: 0px;
     font-size: 45px;
-  }
-
-  .text {
-    font-size: 14px;
   }
 
   .useful__col {
@@ -2074,12 +2158,6 @@ body {
   }
 }
 
-@media screen and (max-width: 465px) {
-  .bth {
-    margin-top: 25px;
-  }
-}
-
 @media screen and (max-width: 420px) {
   .burger {
     display: block;
@@ -2133,6 +2211,14 @@ body {
 
 }
 
+ @media screen and (max-width: 868px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
  @media screen and (max-width: 768px){
 
 @supports (-webkit-appearance:none){
@@ -2166,14 +2252,6 @@ body {
 }
 
  @media screen and (max-width: 467px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media screen and (max-width: 465px){
 
 @supports (-webkit-appearance:none){
 

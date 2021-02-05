@@ -1,21 +1,21 @@
 .about {
 	display: block;
 	min-height: 565px;
-
 }
 
 .about--bg {
 	background:url("@{way-img}/about/bg.png") no-repeat center/cover;
 }
+.about__padding{
+	padding: 80px 0;
+}
 
 .about__row {
 	display: flex;
-	margin: 80px 0;
 
 	@media screen and(max-width:1023px) {
 		flex-wrap: wrap;
 	}
-	border: 1px solid #000;
 }
 
 .about__col-left {
@@ -93,6 +93,11 @@
 
 .about__title{
 	color: @main-color;
+	text-align: left;
+
+	@media screen and(max-width:1023px) {
+		text-align: center;
+	}
 }
 
 .text--white{
@@ -100,8 +105,21 @@
 }
 
 .about__text{
-	color: @main-color;
+	text-align: left;
 	margin: 10px 0 75px 0;
+
+	@media screen and(max-width:1023px) {
+		text-align: center;
+	}
+}
+
+.about__review-text{
+	text-align: left;
+	max-width: none;
+
+	@media screen and(max-width:1023px) {
+		text-align: center;
+	}
 }
 
 .about__wrapper {
@@ -121,6 +139,10 @@
 	.font(18px,25px,"Raleway_Bold",@tema-color);
 	display: block;
 	margin-bottom: 10px;
+
+	@media screen and(max-width:1023px) {
+		text-align: center;
+	}
 }
 
 .about__img {

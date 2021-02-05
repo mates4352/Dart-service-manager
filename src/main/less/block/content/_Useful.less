@@ -24,6 +24,7 @@
 
 .useful__row {
 	display: flex;
+	
 	@media screen and(max-width:1240px) {
 		flex-wrap: wrap;
 		justify-content: center;
@@ -48,9 +49,6 @@
 	.wh(68px,80px);
 	margin: 35px auto;
 }
-.useful__img{
-	
-}
 
 .title-h4 {
 	.font(20px,25px,"Raleway_SemiBold",@tema-color)
@@ -61,3 +59,16 @@
 	color: @usefulColText;
 }
 
+.useful__bth{
+	display: block;
+
+	margin:80px auto 0 auto;
+
+	background-color: #1de9b6;
+	text-transform: uppercase;
+	transition:background-color 500ms ease;
+}
+
+.useful__bth:hover{
+	background-color: #0e6b54;
+}
