@@ -1,11 +1,14 @@
 .menu{
+	.wh(100%,100%);
+
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 1000;
 
-	.wh(100%,100%);
 	background-color: rgba(0, 0, 0, 0.5);
 	visibility: hidden;
+	
 	transform: translate(-120%);
 	transition: transform 500ms ease,visibility 500ms ease;
 }

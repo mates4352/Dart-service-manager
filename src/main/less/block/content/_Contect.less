@@ -1,18 +1,13 @@
-.contect {
-}
-
-.contect__padding{
-	padding: 50px 0 100px 0;
-}
-
 .contect__conteiner {
 	max-width: 600px;
 	margin: 0 auto;
+	padding: 50px 0 100px 0;
 }
 
 .contect__text {
 	padding: 0 20px;
 	margin: 30px 0 50px 0;
+	color: @tema-color;
 }
 
 .contect__wrapper {
@@ -33,6 +28,7 @@
 
 .contect__input{
 	.font(18px,35px,"Raleway_SemiBold",@tema-color);
+
 	min-height: 50px;
 	flex: 0 1 50%;
 
@@ -97,6 +93,10 @@
 	display: inline-flex;
 	margin:auto auto auto 0;
 	color: @tema-color;
+
+	@media screen and(max-width:390px) {
+		margin: 0 auto;
+	}
 }
 
 
@@ -130,7 +130,12 @@
 .contect__bth{
 	text-transform: uppercase;
 	margin-right: 0px;
+
+	@media screen and(max-width:390px) {
+		margin-top: 30px;
+	}
 }
+
 .contect__bth[disabled="disabled"]{
 	background-color: #4a7469;
 }
