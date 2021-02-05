@@ -1,0 +1,136 @@
+.contect {
+}
+
+.contect__padding{
+	padding: 50px 0 100px 0;
+}
+
+.contect__conteiner {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.contect__text {
+	padding: 0 20px;
+	margin: 30px 0 50px 0;
+}
+
+.contect__wrapper {
+	display: flex;
+	margin-top: 20px;
+
+	@media screen and(max-width:640px) {
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-top: 0px;
+		padding: 0 10px;
+	}
+}
+
+.contect__wrapper:first-child{
+	margin-top: 0px;
+}
+
+.contect__input{
+	.font(18px,35px,"Raleway_SemiBold",@tema-color);
+	min-height: 50px;
+	flex: 0 1 50%;
+
+	margin: 0 20px;
+	text-indent:25px;
+
+	border: 1px solid @tema-color;
+	border-radius: 5px;
+	transition:color 500ms ease, background-color 500ms ease ;
+
+	@media screen and(max-width:640px) {
+		flex: 1 1 100%;
+		max-width: 400px;
+		margin: 20px 0 0 0;
+	}
+}
+
+.contect__input:nth-child(1){
+	margin-left: 0;
+}
+
+.contect__input:nth-child(2){
+	margin-right: 0;
+}
+
+.contect__input:focus{
+	background-color: @tema-color;
+	color: @main-color;
+}
+
+.contect__input::placeholder{
+	.font(14px,30px,"Raleway_Regular",@tema-color);
+	transition: transform 500ms ease;
+}
+
+.contect__input:focus::placeholder{
+	transform: scale(0);
+}
+
+.contect__input-message{
+	min-height: 150px;
+	flex: 0 1 100%;
+	margin: 20px 0 0 0;
+}
+
+.contect__wrapper:nth-child(4){
+	@media screen and(max-width:640px) {
+		margin: 20px 0 0 0;
+	}
+}
+
+.contect__chekcbox {
+	display: none;
+}
+
+.contect__chekcbox:checked + .contect__label::after{
+	transform: scale(1);
+}
+
+.contect__label{
+	&:extend(.pos-rel);
+	display: inline-flex;
+	margin:auto auto auto 0;
+	color: @tema-color;
+}
+
+
+.contect__label::before{
+	content: "";
+	.wh(20px,20px);
+
+	margin-top: 2px;
+	margin-right: 10px;
+
+	border: 2px solid @tema-color;
+	border-radius: 4px;
+}
+
+.contect__label::after{
+	content: "";
+	.wh(14px,14px);
+
+	position:absolute;
+	top:5px;
+	left:3px;
+
+	background-color: @tema-color;
+	border-radius: 3px;
+
+	
+	transform: scale(0);
+	transition: transform 500ms ease;
+}
+
+.contect__bth{
+	text-transform: uppercase;
+	margin: 0;
+}
+.contect__bth[disabled="disabled"]{
+	background-color: #4a7469;
+}

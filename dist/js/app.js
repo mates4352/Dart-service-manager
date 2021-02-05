@@ -228,7 +228,7 @@ controls.addEventListener('mouseout', function () {
 })
 let description = document.querySelector('.header__description')
 let button = document.querySelector('.bth')
-let buttonColor = document.querySelector('.bth--color')
+let buttonColor = document.querySelector('.header__bth--color')
 
 description.addEventListener('mouseover', event => {
 	
@@ -272,3 +272,17 @@ document.querySelector('.about__col-right').addEventListener( 'click', (event) =
 console.log(slaider.children);
 console.log(slaider.lastElementChild);
 slaider.firstElementChild
+let bthContect = document.querySelector('.contect__bth')
+let chekcbox = document.querySelector('.contect__label')
+
+chekcbox.addEventListener('click', () => {
+
+	if (bthContect.hasAttribute("disabled",true)) {
+		bthContect.removeAttribute("disabled")
+	}
+	
+	else {
+		bthContect.setAttribute("disabled","disabled")
+	}
+
+})

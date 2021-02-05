@@ -1,20 +1,23 @@
-section.contect
-	.conteiner__tho
-		h2.title-h2
-		p.text.contect__text
+section.contect.contect__padding
+	.contect__conteiner
+
+		h2.title Contact Us
+		p.text.contect__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
 
 		form.contect__form(action="#")
 			.contect__wrapper
-				input.contect__name(type="text")
-				input.contect__surname(type="text")
+				input.contect__input(type="text" placeholder="First Name")
+				input.contect__input(type="text" placeholder="Last Name")
 
 			.contect__wrapper
-				input.contect__email(type="email")
-				input.contect__tel(type="tel")
-
-			textarea.contect__message(name="message")
+				input.contect__input(type="email" placeholder="Email")
+				input.contect__input(type="tel" placeholder="Phone")
 
 			.contect__wrapper
-				input(type="checkbox" value="") 
-				p.text.contect__text subscribe to the newsletter
-				button.button
+				textarea.contect__input.contect__input-message(name="message" placeholder="Message")
+
+			.contect__wrapper
+				input.contect__chekcbox(id="contect" type="checkbox" value="") 
+				label.text.contect__label(for="contect") subscribe to the newsletter
+				button.bth.contect__bth.bth--color(disabled="disabled") send
+			

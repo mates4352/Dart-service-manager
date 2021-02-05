@@ -1,6 +1,6 @@
 let description = document.querySelector('.header__description')
 let button = document.querySelector('.bth')
-let buttonColor = document.querySelector('.bth--color')
+let buttonColor = document.querySelector('.header__bth--color')
 
 description.addEventListener('mouseover', event => {
 	
