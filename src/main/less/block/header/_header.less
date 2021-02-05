@@ -7,6 +7,7 @@
 .conteiner {
 	max-width: 1450px;
 	margin: 0 auto;
+	padding: 0 10px;
 	
 	// @media screen and(max-width:1449px) {
 	// 	max-width: 1024px;
@@ -28,23 +29,24 @@
 
 .header__top-col {
 	display: flex;
+
+	@media screen and(max-width:420px) {
+		margin-bottom: 50px;
+	}
 }
 
 .header__wrapper {
 	margin-left: 10px;
 }
 
-.header__logo-text {
+.logo__text {
 	.font(15px,15px,@main-color);
 }
 
-.header__logo-title{
+.logo__title{
 	.font(15px,15px,"Raleway_Bold",@main-color);
 	text-transform: uppercase;
 
-	@media screen and(max-width:420px) {
-		margin-bottom: 50px;
-	}
 }
 
 .header__nav {
@@ -139,6 +141,10 @@
 }
 .header__text{
 	margin:10px 0px 25px 0px;
+
+	@media screen and(max-width:1240px) {
+		margin:10px auto 25px auto;
+	}
 }
 
 
