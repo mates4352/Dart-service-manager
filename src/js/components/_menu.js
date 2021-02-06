@@ -13,7 +13,6 @@ function adaptive_header(w, h) {
 
 		if (!nav.classList.contains('done')) {
 			nav.classList.add('done')
-			menu.innerHTML = ''
 			menu.innerHTML = headerMenu.innerHTML
 			headerMenu.innerHTML = ''
 		}

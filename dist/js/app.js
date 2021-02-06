@@ -30,7 +30,6 @@ function adaptive_header(w, h) {
 
 		if (!nav.classList.contains('done')) {
 			nav.classList.add('done')
-			menu.innerHTML = ''
 			menu.innerHTML = headerMenu.innerHTML
 			headerMenu.innerHTML = ''
 		}
@@ -77,7 +76,6 @@ bth.addEventListener('click', function () {
 modal.addEventListener('click', function (event) {
 	event.target.classList.remove('active')
 })
-
 
 let video = document.querySelector('.media__video')
 let media = document.querySelector('.media')
@@ -200,7 +198,16 @@ let durationBarHour = document.querySelector('.hour')
 
 function progressUpdate() { 
 	durationBar.style.width = (video.currentTime / video.duration * 100) + "%"
-	durationBarSecond.innerHTML = video.currentTime.toFixed()
+
+	let secondsTime = video.currentTime.toFixed()
+	const minutes = Math.floor(secondsTime / 60)
+	const seconds = secondsTime - minutes * 60 
+	const hour = Math.floor(minutes / 60)
+	minutes - hour * 60
+	durationBarMinute.innerHTML = minutes
+	durationBarSecond.innerHTML = seconds
+	durationBarHour.innerHTML = hour
+	
 }
 
 let mediaConteinerBar = document.querySelector('.media__conteinerBar')

@@ -1,5 +1,4 @@
 
-
 let video = document.querySelector('.media__video')
 let media = document.querySelector('.media')
 let bg= document.querySelector('.media-bg')
@@ -121,7 +120,16 @@ let durationBarHour = document.querySelector('.hour')
 
 function progressUpdate() { 
 	durationBar.style.width = (video.currentTime / video.duration * 100) + "%"
-	durationBarSecond.innerHTML = video.currentTime.toFixed()
+
+	let secondsTime = video.currentTime.toFixed()
+	const minutes = Math.floor(secondsTime / 60)
+	const seconds = secondsTime - minutes * 60 
+	const hour = Math.floor(minutes / 60)
+	minutes - hour * 60
+	durationBarMinute.innerHTML = minutes
+	durationBarSecond.innerHTML = seconds
+	durationBarHour.innerHTML = hour
+	
 }
 
 let mediaConteinerBar = document.querySelector('.media__conteinerBar')

@@ -1,29 +1,5 @@
 /*-customization-*/
 
-@font-face {
-  font-family: 'Raleway_Bold';
-  src: url('../assets/fonts/Raleway-Bold.eot');
-  src: local('☺'),url('../assets/fonts/Raleway-Bold.woff') format('woff'),url('../assets/fonts/Raleway-Bold.ttf') format('truetype'),url('../assets/fonts/Raleway-Bold.svg') format('svg');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Raleway_Regular';
-  src: url('../assets/fonts/Raleway-Regular.eot');
-  src: local('☺'),url('../assets/fonts/Raleway-Regular.woff') format('woff'),url('../assets/fonts/Raleway-Regular.ttf') format('truetype'),url('../assets/fonts/Raleway-Regular.svg') format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Raleway_SemiBold';
-  src: url('../assets/fonts/Raleway-SemiBold.eot');
-  src: local('☺'),url('../assets/fonts/Raleway-SemiBold.woff') format('woff'),url('../assets/fonts/Raleway-SemiBold.ttf') format('truetype'),url('../assets/fonts/Raleway-SemiBold.svg') format('svg');
-  font-weight: 600;
-  font-style: normal;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -153,6 +129,30 @@ sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
+}
+
+@font-face {
+  font-family: 'Raleway_Bold';
+  src: url('../assets/fonts/Raleway-Bold.eot');
+  src: local('☺'),url('../assets/fonts/Raleway-Bold.woff') format('woff'),url('../assets/fonts/Raleway-Bold.ttf') format('truetype'),url('../assets/fonts/Raleway-Bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway_Regular';
+  src: url('../assets/fonts/Raleway-Regular.eot');
+  src: local('☺'),url('../assets/fonts/Raleway-Regular.woff') format('woff'),url('../assets/fonts/Raleway-Regular.ttf') format('truetype'),url('../assets/fonts/Raleway-Regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway_SemiBold';
+  src: url('../assets/fonts/Raleway-SemiBold.eot');
+  src: local('☺'),url('../assets/fonts/Raleway-SemiBold.woff') format('woff'),url('../assets/fonts/Raleway-SemiBold.ttf') format('truetype'),url('../assets/fonts/Raleway-SemiBold.svg') format('svg');
+  font-weight: 600;
+  font-style: normal;
 }
 
 @font-face {
