@@ -2507,6 +2507,14 @@ sup {
     flex: 1 1 100%;
   }
 
+  .swiper-button-next {
+    left: 50%;
+  }
+
+  .swiper-button-prev {
+    left: 50%;
+  }
+
   .about__slaider-slide {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
