@@ -113,7 +113,6 @@ media.addEventListener('click', event => {
 	}
 })
 
-let durationBarTime = document.querySelector('.media__durationBar-time')
 let durationBarSecond = document.querySelector('.second')
 let durationBarMinute = document.querySelector('.minute')
 let durationBarHour = document.querySelector('.hour')
