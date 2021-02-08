@@ -2063,7 +2063,7 @@ sup {
   top: 110%;
 }
 
-.swiper-pagination-bullet {
+.about__slaider-pagination .swiper-pagination-bullet {
   background: #061e37;
   width: 10px;
   height: 10px;
