@@ -2114,30 +2114,14 @@ sup {
   margin: 20px 0;
 }
 
-.slider-person {
+.team__slider-container {
   margin-top: 80px;
+  width: 500px;
+  text-align: center;
 }
 
-.slider-person__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.slider-person__item:last-child {
-  opacity: 0.3;
-  margin-left: 30px;
-}
-
-.slider-person__item:first-child {
-  opacity: 0.3;
-  margin-right: 30px;
+.team__slider-slide .swiper-slide {
+  text-align: center;
 }
 
 .team__title-h4 {

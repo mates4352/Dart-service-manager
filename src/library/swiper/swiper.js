@@ -48,3 +48,24 @@ const swiper = new Swiper('.about__slaider-conteiner', {
 	speed:1000,
 
 });
+
+
+const swiper_2 = new Swiper('.team__slider-container', {
+	loop: true,
+
+	grabCursor: true,
+
+	slidesPerView: 1,
+	initialslide: 1,
+	centeredSlides: true,
+	
+	autoplay: {
+		delay: 3000,
+		stopOnLastSlide: false,
+		didableOnInteraction:true
+	},
+	touchRatio:0.5,
+
+	speed:1000,
+
+});
