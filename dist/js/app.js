@@ -207,15 +207,29 @@ function progressUpdate() {
 	durationBarMinute.innerHTML = minutes
 	durationBarSecond.innerHTML = seconds
 	durationBarHour.innerHTML = hour
-	
 }
 
 let mediaConteinerBar = document.querySelector('.media__conteinerBar')
 
-mediaConteinerBar.addEventListener('click', function (event) {
-	let leftMargin = mediaConteinerBar.getBoundingClientRect().left
-	let time =((event.pageX - leftMargin) / mediaConteinerBar.offsetWidth  ) * video.duration 
-	video.currentTime = time
+mediaConteinerBar.addEventListener('mousedown', function (event) {
+
+	function onMouseMove(event) {
+		let left = mediaConteinerBar.getBoundingClientRect().left
+		let time =((event.pageX - left) / this.offsetWidth  ) * video.duration 
+		video.currentTime = time
+	}
+
+	this.addEventListener('mousemove', onMouseMove)
+	this.addEventListener('click', function () {
+		let left = mediaConteinerBar.getBoundingClientRect().left
+		let time =((event.pageX - left) / this.offsetWidth  ) * video.duration 
+		video.currentTime = time
+	} )
+
+	this.addEventListener('mouseup', function () {
+		this.removeEventListener("mousemove",onMouseMove);
+	})
+	
 })
 
 video.addEventListener('mousemove', function () {
