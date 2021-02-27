@@ -213,21 +213,21 @@ let mediaConteinerBar = document.querySelector('.media__conteinerBar')
 
 mediaConteinerBar.addEventListener('mousedown', function (event) {
 
-	function onMouseMove(event) {
-		let left = mediaConteinerBar.getBoundingClientRect().left
+	function dragDrop(event) {
+		let left = this.getBoundingClientRect().left
 		let time =((event.pageX - left) / this.offsetWidth  ) * video.duration 
 		video.currentTime = time
 	}
 
-	this.addEventListener('mousemove', onMouseMove)
-	this.addEventListener('click', function () {
+	this.addEventListener('mousemove', dragDrop)
+	this.addEventListener('click', dragDrop)
+
+	this.addEventListener('mouseup', function (event) {
 		let left = mediaConteinerBar.getBoundingClientRect().left
 		let time =((event.pageX - left) / this.offsetWidth  ) * video.duration 
 		video.currentTime = time
-	} )
-
-	this.addEventListener('mouseup', function () {
-		this.removeEventListener("mousemove",onMouseMove);
+		this.removeEventListener("mousemove",dragDrop);
+		this.removeEventListener("click",dragDrop);
 	})
 	
 })
