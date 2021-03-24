@@ -1188,26 +1188,38 @@ sup {
   align-items: center;
 }
 
-.media__radio[type=range] {
-  background: #061e37;
-  max-width: 150px;
-  height: 2px;
-  margin-left: 5px;
+.media__rangeBar {
+  background: #ffffff;
+  width: 150px;
+  height: 3px;
+  margin: 0 15px;
+  position: relative;
   border-radius: 25px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
-.media__radio[type=range]::-webkit-slider-thumb {
+.media__range {
+  background: #061e37;
+  width: 0%;
+  height: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+}
+
+.media__circle {
   background: #ffffff;
   height: 16px;
   width: 16px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   -webkit-box-shadow: 0 0 4px #000;
   box-shadow: 0 0 4px #000;
-  -webkit-appearance: none;
-  appearance: none;
   cursor: pointer;
 }
 
@@ -1420,7 +1432,7 @@ sup {
   font: 1.8rem/0em "Raleway_SemiBold";
   color: #061e37;
   position: absolute;
-  top: 20px;
+  top: 17px;
   right: 10px;
 }
 
@@ -1688,12 +1700,8 @@ sup {
   display: flex;
 }
 
-.nav__items {
-  margin-left: 50px;
-}
-
-.nav__items:first-child {
-  margin-left: 0px;
+.nav__items:not(:last-of-type) {
+  margin-right: 50px;
 }
 
 .nav__link {
@@ -2413,6 +2421,12 @@ sup {
   margin-right: 0;
 }
 
+@media screen and (max-width: 1449px) {
+  .conteiner {
+    max-width: 1140px;
+  }
+}
+
 @media screen and (max-width: 1240px) {
   .media {
     -webkit-box-flex: 1;
@@ -2449,6 +2463,12 @@ sup {
 
   .header__text {
     margin: 30px auto 30px auto;
+  }
+}
+
+@media screen and (max-width: 1139px) {
+  .conteiner {
+    max-width: 992px;
   }
 }
 
@@ -2523,7 +2543,7 @@ sup {
   }
 }
 
-@media screen and (max-width: 868px) {
+@media screen and (max-width: 992px) {
   .header__top {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2533,6 +2553,12 @@ sup {
 
   .header__nav {
     margin: 50px 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .conteiner {
+    max-width: 768px;
   }
 }
 
@@ -2643,8 +2669,29 @@ sup {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .header__top-col:not(:last-of-type) {
+    margin-bottom: 50px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header__title {
+    margin-top: 35px;
+    font-size: 35px;
+  }
+
+  .header__text {
+    font-size: 18px;
+  }
+}
+
 @media screen and (max-width: 550px) {
-  .nav__items {
+  .nav__items:not(:last-of-type) {
     margin-left: 25px;
   }
 }
@@ -2662,16 +2709,14 @@ sup {
     display: block;
   }
 
-  .header__top-col {
-    margin-bottom: 50px;
-  }
-
-  .header__nav {
-    display: none;
-  }
-
   .footer__col {
     margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .media__rangeBar {
+    width: 50px;
   }
 }
 
@@ -2713,7 +2758,23 @@ sup {
 .swiper-button-prev{background:url("../assets/images/about/arrow.webp") no-repeat center/cover}
 }
 
+ @media screen and (max-width: 1449px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
  @media screen and (max-width: 1240px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 1139px){
 
 @supports (-webkit-appearance:none){
 
@@ -2729,7 +2790,15 @@ sup {
 
 }
 
- @media screen and (max-width: 868px){
+ @media screen and (max-width: 992px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 991px){
 
 @supports (-webkit-appearance:none){
 
@@ -2761,6 +2830,22 @@ sup {
 
 }
 
+ @media screen and (max-width: 576px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 575px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
  @media screen and (max-width: 550px){
 
 @supports (-webkit-appearance:none){
@@ -2778,6 +2863,14 @@ sup {
 }
 
  @media screen and (max-width: 420px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 410px){
 
 @supports (-webkit-appearance:none){
 

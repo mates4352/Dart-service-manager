@@ -56,26 +56,47 @@
 	align-items: center;
 }
 
-.media__radio[type=range]{
-	max-width: 150px;
-	height: 2px;
-	margin-left: 5px;
+.media__rangeBar{
+	width: 150px;
+	height: 3px;
+	margin: 0 15px;
 
-	background-color: @tema-color;
+	position: relative;
+
+	background-color: @main-color;
 	border-radius: 25px;
 
-	appearance: none;
+	@media screen and(max-width:410px) {
+		width: 50px;
+	}
 }
 
-.media__radio[type=range]::-webkit-slider-thumb {
+.media__range{
+	width: 0%;
+	height: 3px;
+
+	position:absolute;
+	top:0;
+	left:0;
+
+	border-radius: 25px;
+	background-color: @tema-color;
+}
+
+.media__circle{
 	height: 16px;
 	width: 16px;
+
+	position:absolute;
+	top:0%;
+	left:0%;
+
+	transform: translate(-50%,-50%);
 	
 	border-radius: 50%;
 	background-color: #ffffff;
 	box-shadow: 0 0 4px #000;
 
-	appearance: none;
 	cursor: pointer;
  }
 
@@ -271,7 +292,7 @@
 .media__durationBar-time{
 	.font(18px,0,"Raleway_SemiBold",@tema-color);
 	position: absolute;
-	top: 20px;
+	top: 17px;
 	right: 10px;
 }
 

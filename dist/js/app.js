@@ -78,20 +78,19 @@ modal.addEventListener('click', function (event) {
 	event.target.classList.remove('active')
 })
 
-let video = document.querySelector('.media__video')
-let media = document.querySelector('.media')
-let bg= document.querySelector('.media-bg')
-let videoBth = document.querySelector('.media-bth')
-let controls = document.querySelector('.media-controls')
-let progress = document.querySelector('.media__progress')
-let durationBar = document.querySelector(".media__durationBar")
+const video = document.querySelector('.media__video')
+const media = document.querySelector('.media')
+const bg = document.querySelector('.media-bg')
+const videoBth = document.querySelector('.media-bth')
+const controls = document.querySelector('.media-controls')
+const progress = document.querySelector('.media__progress')
+const durationBar = document.querySelector(".media__durationBar")
 
-let bthControls = document.querySelector('.media__bth--controls')
-let bthVolume = document.querySelector('.media__bth--volume')
-let mediaSound = document.querySelector('.media__sound')
-mediaSound.innerHTML = 100 + "%"
+const bthControls = document.querySelector('.media__bth--controls')
+const bthVolume = document.querySelector('.media__bth--volume')
+const mediaSound = document.querySelector('.media__sound')
 
-let mediaRadio = document.querySelector('.media__radio')
+const mediaRadio = document.querySelector('.media__radio')
 
 function videoPlay() {
 	video.play()
@@ -102,7 +101,7 @@ function videoPause() {
 }
 
 function VideoPlayPaused() {
-	if(video.paused)
+	if (video.paused)
 		videoPlay()
 	else {
 		videoPause()
@@ -127,19 +126,19 @@ media.addEventListener('click', event => {
 			video.play()
 			classListRemove(bthControls)
 		}
-	
+
 		else if (video.paused) {
 			videoPlay()
 			classListAdd(bg)
 			classListAdd(videoBth)
 		}
-			
-		else{
+
+		else {
 			videoPause()
 			classListRemove(bg)
 			classListRemove(videoBth)
 		}
-		
+
 		classListRemove(controls)
 
 	}
@@ -149,7 +148,7 @@ media.addEventListener('click', event => {
 		classListToggle(videoBth)
 		VideoPlayPaused()
 	}
-	
+
 	if (event.target.classList.contains("media__bth--controls")) {
 		classListToggle(bthControls)
 		VideoPlayPaused()
@@ -166,70 +165,19 @@ media.addEventListener('click', event => {
 	if (event.target.classList.contains("media__bth--speedUp")) {
 		playbackRate(10)
 	}
-	
+
 	if (event.target.classList.contains("media__bth--volume")) {
 		if (video.volume) {
 			video.volume = 0
 			classListAdd(event.target)
 		}
 		else {
-			video.volume = mediaRadio.value / 100
+			video.volume = parseInt(mediaSound.innerHTML) / 100
 			classListRemove(bthVolume)
 		}
 	}
 
-	if (event.target.classList.contains("media__radio")) {
 
-		if (bthVolume.classList.contains("active")) {
-			video.volume = 0
-			mediaSound.innerHTML = mediaRadio.value + "%"
-		}
-		else {
-			video.volume = mediaRadio.value / 100
-			mediaSound.innerHTML = mediaRadio.value + "%"
-		}
-		
-	}
-})
-
-let durationBarSecond = document.querySelector('.second')
-let durationBarMinute = document.querySelector('.minute')
-let durationBarHour = document.querySelector('.hour')
-
-function progressUpdate() { 
-	durationBar.style.width = (video.currentTime / video.duration * 100) + "%"
-
-	let secondsTime = video.currentTime.toFixed()
-	const minutes = Math.floor(secondsTime / 60)
-	const seconds = secondsTime - minutes * 60 
-	const hour = Math.floor(minutes / 60)
-	minutes - hour * 60
-	durationBarMinute.innerHTML = minutes
-	durationBarSecond.innerHTML = seconds
-	durationBarHour.innerHTML = hour
-}
-
-let mediaConteinerBar = document.querySelector('.media__conteinerBar')
-
-mediaConteinerBar.addEventListener('mousedown', function (event) {
-
-	function dragDrop(event) {
-		let left = this.getBoundingClientRect().left
-		let time =((event.pageX - left) / this.offsetWidth  ) * video.duration 
-		video.currentTime = time
-	}
-
-	this.addEventListener('mousemove', dragDrop)
-	this.addEventListener('click', dragDrop)
-
-	this.addEventListener('mouseup', function (event) {
-		let left = mediaConteinerBar.getBoundingClientRect().left
-		let time =((event.pageX - left) / this.offsetWidth  ) * video.duration 
-		video.currentTime = time
-		this.removeEventListener("mousemove",dragDrop);
-		this.removeEventListener("click",dragDrop);
-	})
-	
 })
 
 video.addEventListener('mousemove', function () {
@@ -246,6 +194,91 @@ controls.addEventListener('mouseover', function () {
 
 controls.addEventListener('mouseout', function () {
 	classListRemove(controls)
+})
+
+const mediaConteinerBar = document.querySelector('.media__conteinerBar')
+
+mediaConteinerBar.addEventListener('mousedown', function (event) {
+
+	function dragDrop(event) {
+		const left = this.getBoundingClientRect().left
+		const time = ((event.pageX - left) / this.offsetWidth) * video.duration
+		video.currentTime = time
+	}
+
+	this.addEventListener('mousemove', dragDrop)
+	this.addEventListener('click', dragDrop)
+
+	this.addEventListener('mouseup', function (event) {
+		const left = mediaConteinerBar.getBoundingClientRect().left
+		const time = ((event.pageX - left) / this.offsetWidth) * video.duration
+		video.currentTime = time
+
+		this.removeEventListener("mousemove", dragDrop);
+		this.removeEventListener("click", dragDrop);
+	})
+
+})
+
+const durationBarSecond = document.querySelector('.second')
+const durationBarMinute = document.querySelector('.minute')
+const durationBarHour = document.querySelector('.hour')
+
+function progressUpdate() {
+	durationBar.style.width = (video.currentTime / video.duration * 100) + "%"
+
+	let secondsTime = video.currentTime.toFixed()
+	const minutes = Math.floor(secondsTime / 60)
+	const seconds = secondsTime - minutes * 60
+	const hour = Math.floor(minutes / 60)
+	minutes - hour * 60
+	durationBarMinute.innerHTML = minutes
+	durationBarSecond.innerHTML = seconds
+	durationBarHour.innerHTML = hour
+}
+
+const circle = document.querySelector(".media__circle")
+const RangeBar = document.querySelector(".media__rangeBar")
+const range = document.querySelector(".media__range")
+const time = 50
+
+mediaSound.innerHTML = 100 + "%"
+
+circle.addEventListener('mousedown', () => {
+	function dragDrop(event) {
+		const left = RangeBar.getBoundingClientRect().left
+		
+		function pageX() {
+			return (event.pageX - left)
+		}
+
+		range.style.width = pageX() + "px"
+		circle.style.left = pageX() + "px"
+
+		if (parseInt(circle.style.left) >= RangeBar.offsetWidth) {
+			circle.style.left = 100 + "%"
+		}
+		if (parseInt(circle.style.left) < 0) {
+			circle.style.left = 0 + '%'
+		}
+
+		if (bthVolume.classList.contains('active')) {
+			video.volume = 0
+		}
+		else {
+			video.volume = (pageX() / (RangeBar.offsetWidth))
+		}
+		
+		mediaSound.innerHTML = (pageX() / (RangeBar.offsetWidth / 100)).toFixed() + "%"
+	}
+
+	RangeBar.addEventListener("mousemove", dragDrop)
+
+	circle.addEventListener('mouseup', () => {
+		RangeBar.removeEventListener("mousemove", dragDrop)
+		RangeBar.removeEventListener("click", dragDrop)
+	})
+
 })
 let description = document.querySelector('.header__description')
 let button = document.querySelector('.bth')
