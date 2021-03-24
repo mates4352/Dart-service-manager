@@ -1,3 +1,7 @@
+body.active{
+	overflow:hidden;
+}
+
 .modal{
 	.wh(100vw,100vh);
 
@@ -19,7 +23,7 @@
 }
 
 .modal__body{
-	width: 50vw;
+	width: 80vw;
 	padding: 25px 0;
 
 	position: absolute;
@@ -30,9 +34,6 @@
 	box-shadow:0 25px 15px #061e37;
 	background-color: @tema-color;
 
-	@media screen and (max-width:768px) {
-		width: 50%;
-	}
 
 	@media screen and (max-height:1079px) {
 		position: absolute;

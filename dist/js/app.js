@@ -61,17 +61,21 @@ burger.addEventListener("click", function () {
 	classListToggle(burger)
 	classListToggle(menu)
 })
-let modal = document.querySelector('.modal')
-let modalbody = document.querySelector('.modal__body')
-let bth = document.querySelector('.header__bth-menu')
-let close = document.querySelector('.modal__close')
+const modal = document.querySelector('.modal')
+const modalbody = document.querySelector('.modal__body')
+const bth = document.querySelector('.header__bth-menu')
+const close = document.querySelector('.modal__close')
+const body = document.querySelector('body')
+
 
 close.addEventListener('click', function () {
 	modal.classList.remove('active')
+	body.classList.remove('active')
 })
 
 bth.addEventListener('click', function () {
 	modal.classList.add('active')
+	body.classList.add('active')
 })
 
 modal.addEventListener('click', function (event) {

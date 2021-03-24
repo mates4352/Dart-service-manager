@@ -843,6 +843,10 @@ sup {
 
 /*-component-*/
 
+body.active {
+  overflow: hidden;
+}
+
 .modal {
   background: #bb70e79a;
   width: 100vw;
@@ -865,7 +869,7 @@ sup {
 
 .modal__body {
   background: #061e37;
-  width: 50vw;
+  width: 80vw;
   padding: 25px 0;
   position: absolute;
   top: 50%;
@@ -1701,7 +1705,7 @@ sup {
 }
 
 .nav__items:not(:last-of-type) {
-  margin-right: 50px;
+  margin-right: 20px;
 }
 
 .nav__link {
@@ -2145,7 +2149,6 @@ sup {
 
 .team__socials {
   display: block;
-  max-width: 500px;
   margin: 50px auto 0 auto;
   text-align: center;
 }
@@ -2392,7 +2395,11 @@ sup {
 .footer__bot-col-link {
   font: 1.5rem/1.7em "Raleway_Regular";
   color: #6b7988;
-  margin: 0 22px;
+  margin-right: 22px;
+}
+
+.footer__bot-col-link:last-child {
+  margin-right: 0;
 }
 
 .footer__bot-col-link:first-child {
@@ -2406,18 +2413,22 @@ sup {
   height: 5px;
   position: absolute;
   top: 50%;
-  right: 125%;
+  right: 105%;
   -webkit-transform: translate(-50%);
   -ms-transform: translate(-50%);
   transform: translate(-50%);
   border-radius: 50%;
 }
 
-.footer__bot-col-link:nth-child(1)::after {
-  display: none;
+.footer__nav {
+  margin: 35px 0;
 }
 
 .footer__socials-item {
+  margin-right: 0;
+}
+
+.footer__items {
   margin-right: 0;
 }
 
@@ -2563,10 +2574,6 @@ sup {
 }
 
 @media screen and (max-width: 768px) {
-  .modal__body {
-    width: 50%;
-  }
-
   .accordion__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2670,12 +2677,24 @@ sup {
 }
 
 @media screen and (max-width: 576px) {
+  .burger {
+    display: block;
+  }
+
   .header__top-col:not(:last-of-type) {
     margin-bottom: 50px;
   }
 
   .header__nav {
     display: none;
+  }
+
+  .team__slider-container {
+    width: 300px;
+  }
+
+  .footer__top {
+    margin-bottom: 0;
   }
 }
 
@@ -2690,12 +2709,6 @@ sup {
   }
 }
 
-@media screen and (max-width: 550px) {
-  .nav__items:not(:last-of-type) {
-    margin-left: 25px;
-  }
-}
-
 @media screen and (max-width: 467px) {
   .download__col {
     -webkit-box-flex: 1;
@@ -2705,10 +2718,6 @@ sup {
 }
 
 @media screen and (max-width: 420px) {
-  .burger {
-    display: block;
-  }
-
   .footer__col {
     margin-bottom: 0px;
   }
@@ -2730,11 +2739,7 @@ sup {
   }
 }
 
-@media screen and (max-width: 360px) {
-  .footer__top {
-    margin-bottom: 0;
-  }
-
+@media screen and (max-width: 359px) {
   .footer__nav {
     display: none;
   }
@@ -2846,14 +2851,6 @@ sup {
 
 }
 
- @media screen and (max-width: 550px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
  @media screen and (max-width: 467px){
 
 @supports (-webkit-appearance:none){
@@ -2886,7 +2883,7 @@ sup {
 
 }
 
- @media screen and (max-width: 360px){
+ @media screen and (max-width: 359px){
 
 @supports (-webkit-appearance:none){
 
