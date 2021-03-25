@@ -375,11 +375,13 @@ for (let anchor of anchors) {
 		})
 	})
 }
-const element = document.getElementById('tel');
+const element = document.querySelectorAll('#tel');
 const maskOptions = {
   mask: '+{7}(000)000-00-00'
 };
-const mask = IMask(element, maskOptions);
+element.forEach((event) => {
+	IMask(event, maskOptions);
+})
 
 
 
@@ -399,10 +401,9 @@ const swiper = new Swiper('.about__slaider-conteiner', {
 	prevEl: '.swiper-button-prev',
 	},
 
-	grabCursor: true,
+	
 
 	slidesPerView: 2,
-	freeMode:true,
 	
 	hashNavigation: {
 		watchState:true,
@@ -434,10 +435,12 @@ const swiper = new Swiper('.about__slaider-conteiner', {
 	
 	breakpoints: {
 		0: {
+			grabCursor: false,
 			touchRatio: 0,
 		},
 		1024: {
 			touchRatio: 1,
+			grabCursor: true,
 		}
 	 },
 });
@@ -447,9 +450,7 @@ const swiper_2 = new Swiper('.team__slider-container', {
 	loop: true,
 	grabCursor: true,
 	slidesPerView: 3,
-	initialslide: 1,
 	centeredSlides: true,
-	freeMode:true,
 	spaceBetween: 30,
 	autoplay: {
 		delay: 2000,
