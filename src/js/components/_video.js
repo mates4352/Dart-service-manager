@@ -152,6 +152,7 @@ function progressUpdate() {
 	const minutes = Math.floor(secondsTime / 60)
 	const seconds = secondsTime - minutes * 60
 	const hour = Math.floor(minutes / 60)
+	
 	minutes - hour * 60
 	durationBarMinute.innerHTML = minutes
 	durationBarSecond.innerHTML = seconds
@@ -161,39 +162,42 @@ function progressUpdate() {
 const circle = document.querySelector(".media__circle")
 const RangeBar = document.querySelector(".media__rangeBar")
 const range = document.querySelector(".media__range")
-const time = 50
-
-mediaSound.innerHTML = 100 + "%"
+const time = 60
+mediaSound.innerHTML = `${time}%`
+video.volume = `${time / 100}`
+range.style.width = `${time}%`
+circle.style.left = `${time}%`
 
 circle.addEventListener('mousedown', () => {
 	function dragDrop(event) {
 		const left = RangeBar.getBoundingClientRect().left
-		
-		function pageX() {
-			return (event.pageX - left)
-		}
+		const pageX = event.pageX - left
+		const rangeBarWidth = RangeBar.offsetWidth
 
-		range.style.width = pageX() + "px"
-		circle.style.left = pageX() + "px"
+		range.style.width = `${pageX}px`
+		circle.style.left = `${pageX}px`
 
-		if (parseInt(circle.style.left) >= RangeBar.offsetWidth) {
+		if (parseInt(circle.style.left) >= rangeBarWidth) {
 			circle.style.left = 100 + "%"
 		}
 		if (parseInt(circle.style.left) < 0) {
-			circle.style.left = 0 + '%'
+			video.volume = 0
+			circle.style.left = 0 + "%"
 		}
 
 		if (bthVolume.classList.contains('active')) {
 			video.volume = 0
 		}
 		else {
-			video.volume = (pageX() / (RangeBar.offsetWidth))
+			video.volume = (pageX / rangeBarWidth)
 		}
-		
-		mediaSound.innerHTML = (pageX() / (RangeBar.offsetWidth / 100)).toFixed() + "%"
+
+		mediaSound.innerHTML = (pageX / (rangeBarWidth / 100)).toFixed() + "%"
+		console.log("htlll");
 	}
 
 	RangeBar.addEventListener("mousemove", dragDrop)
+	RangeBar.addEventListener("click", dragDrop)
 
 	circle.addEventListener('mouseup', () => {
 		RangeBar.removeEventListener("mousemove", dragDrop)
@@ -201,4 +205,14 @@ circle.addEventListener('mousedown', () => {
 	})
 
 })
+
+const header = document.querySelector('.header__title')
+window.addEventListener('scroll',()=> {
+	if (window.scrollY == 0) {
+		header.style.display = "none"
+	}
+})
+
+
+
 
