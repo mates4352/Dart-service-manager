@@ -42,8 +42,16 @@ const swiper = new Swiper('.about__slaider-conteiner', {
 		didableOnInteraction:false
 	},
 
-	speed:1000,
-
+	speed: 1000,
+	
+	breakpoints: {
+		0: {
+			touchRatio: 0,
+		},
+		1024: {
+			touchRatio: 1,
+		}
+	 },
 });
 
 
@@ -56,7 +64,7 @@ const swiper_2 = new Swiper('.team__slider-container', {
 	freeMode:true,
 	spaceBetween: 30,
 	autoplay: {
-		delay: 3000,
+		delay: 2000,
 		stopOnLastSlide: false,
 		didableOnInteraction:true
 	},

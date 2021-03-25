@@ -2226,11 +2226,11 @@ body.active {
   height: 150px;
   margin: 0 auto;
   opacity: 0.5;
-  -webkit-transition: opacity 500ms ease,-webkit-transform 500ms ease;
-  transition: opacity 500ms ease,-webkit-transform 500ms ease;
-  -o-transition: opacity 500ms ease,transform 500ms ease;
-  transition: opacity 500ms ease,transform 500ms ease;
-  transition: opacity 500ms ease,transform 500ms ease,-webkit-transform 500ms ease;
+  -webkit-transition: opacity 1s ease,-webkit-transform 1s ease;
+  transition: opacity 1s ease,-webkit-transform 1s ease;
+  -o-transition: opacity 1s ease,transform 1s ease;
+  transition: opacity 1s ease,transform 1s ease;
+  transition: opacity 1s ease,transform 1s ease,-webkit-transform 1s ease;
 }
 
 .slider-person__img-two {
