@@ -81,7 +81,6 @@ bth.addEventListener('click', function () {
 modal.addEventListener('click', function (event) {
 	event.target.classList.remove('active')
 })
-
 const video = document.querySelector('.media__video')
 const media = document.querySelector('.media')
 const bg = document.querySelector('.media-bg')
@@ -235,7 +234,7 @@ function progressUpdate() {
 	const minutes = Math.floor(secondsTime / 60)
 	const seconds = secondsTime - minutes * 60
 	const hour = Math.floor(minutes / 60)
-	
+
 	minutes - hour * 60
 	durationBarMinute.innerHTML = minutes
 	durationBarSecond.innerHTML = seconds
@@ -312,35 +311,6 @@ description.addEventListener('mouseout', event => {
 	classListRemove(button)
 	classListRemove(buttonColor)
 })
-// let arrowTop = document.querySelector('.about__arrow-top')
-// let arrowBot = document.querySelector('.about__arrow-bot')
-// let slaider = document.querySelector('.about__slaider')
-
-
-// document.querySelector('.about__col-right').addEventListener( 'click', (event) => {
-
-// 	if (event.target.classList.contains('about__arrow-top')) {
-
-// 		let wrapper = slaider.firstElementChild
-// 		slaider.append(wrapper)
-
-// 	}
-	
-// 	if (event.target.classList.contains('about__arrow-bot')) {
-
-// 		let wrapper = slaider.lastElementChild
-// 		slaider.prepend(wrapper)
-
-// 	}
-
-// })
-
-
-
-
-// console.log(slaider.children);
-// console.log(slaider.lastElementChild);
-// slaider.firstElementChild
 let bthContect = document.querySelector('.contect__bth')
 let chekcbox = document.querySelector('.contect__label')
 

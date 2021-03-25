@@ -1667,20 +1667,20 @@ body.active {
   right: 13px;
   z-index: 9999;
   cursor: pointer;
+  fill: crimson;
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
-.arrowSvg path {
-  fill: #2584e2;
-  -webkit-transition: fill 0.5s ease-out;
-  -o-transition: fill 0.5s ease-out;
-  transition: fill 0.5s ease-out;
+.arrowSvg {
+  -webkit-transition: bottom 0.5s ease-out;
+  -o-transition: bottom 0.5s ease-out;
+  transition: bottom 0.5s ease-out;
 }
 
-.arrowSvg:hover path {
-  fill: crimson;
+.arrowSvg:hover {
+  bottom: 22px;
 }
 
 .propress-line {
