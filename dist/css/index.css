@@ -2153,6 +2153,9 @@ body.active {
 
 .about__review {
   background: #fff;
+  max-width: 500px;
+  min-height: 200px;
+  margin: 0 auto;
   overflow-y: auto;
   padding: 30px 60px 30px 30px;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
@@ -2182,7 +2185,7 @@ body.active {
 
 .team__slider-container {
   margin-top: 80px;
-  width: 500px;
+  max-width: 800px;
   text-align: center;
 }
 
@@ -2207,6 +2210,39 @@ body.active {
 .socials-item {
   display: inline-block;
   margin: 0 15px;
+}
+
+.slider-person__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  opacity: 0.5;
+  -webkit-transition: opacity 500ms ease,-webkit-transform 500ms ease;
+  transition: opacity 500ms ease,-webkit-transform 500ms ease;
+  -o-transition: opacity 500ms ease,transform 500ms ease;
+  transition: opacity 500ms ease,transform 500ms ease;
+  transition: opacity 500ms ease,transform 500ms ease,-webkit-transform 500ms ease;
+}
+
+.slider-person__img-two {
+  width: 120px;
+  height: 120px;
+}
+
+.swiper-slide-active .slider-person__img {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
 }
 
 .socials-link {
@@ -2616,6 +2652,10 @@ body.active {
   .header__nav {
     margin: 50px 0;
   }
+
+  .team__slider-container {
+    max-width: 500px;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -2740,10 +2780,6 @@ body.active {
     display: none;
   }
 
-  .team__slider-container {
-    width: 300px;
-  }
-
   .footer__top {
     margin-bottom: 0;
   }
@@ -2757,6 +2793,10 @@ body.active {
 
   .header__text {
     font-size: 18px;
+  }
+
+  .team__slider-container {
+    max-width: 300px;
   }
 }
 

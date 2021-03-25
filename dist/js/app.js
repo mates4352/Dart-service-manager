@@ -27,7 +27,7 @@ function adaptive_header(w, h) {
 	let headerMenu = document.querySelector('.header__nav')
 	let nav = document.querySelector('.nav__list')
 	
-	if (w < 420) {
+	if (w < 576) {
 
 		if (!nav.classList.contains('done')) {
 			nav.classList.add('done')
@@ -401,23 +401,20 @@ const swiper = new Swiper('.about__slaider-conteiner', {
 	hashNavigation: {
 		watchState:true,
 	},
-	mousewheel:{
-		sensitivity:1,
-		eventsTarget: ".about__slaider-conteiner" 
+
+	effect:'cube',
+	cubeEffect:  {
+		slideShadows: true,
+		shadow: true,
+		shadowOffset: 20,
+		shadowScale:0.93,
 	},
-	// effect:'cube',
-	// cubeEffect:  {
-	// 	slideShadows: true,
-	// 	shadow: true,
-	// 	shadowOffset: 20,
-	// 	shadowScale:0.93,
+	// effect:'coverflow',
+	// coverflowEffect: {
+	// 	rotate: 5,
+	// 	stretch:15,
+	// 	slideShadows: false,
 	// },
-	effect:'coverflow',
-	coverflowEffect: {
-		rotate: 5,
-		stretch:15,
-		slideShadows: false,
-	},
 	spaceBetween: 90,
 	freeModeMomentumBounce: true,
 	
@@ -434,20 +431,33 @@ const swiper = new Swiper('.about__slaider-conteiner', {
 
 const swiper_2 = new Swiper('.team__slider-container', {
 	loop: true,
-
 	grabCursor: true,
-
-	slidesPerView: 1,
+	slidesPerView: 3,
 	initialslide: 1,
 	centeredSlides: true,
-	
+	freeMode:true,
+	spaceBetween: 30,
 	autoplay: {
 		delay: 3000,
 		stopOnLastSlide: false,
 		didableOnInteraction:true
 	},
 	touchRatio:0.5,
-
-	speed:1000,
+	speed: 1000,
+	
+	breakpoints: {
+		0: {
+		  slidesPerView: 1,
+		  spaceBetween: 20
+		},
+		576: {
+		  slidesPerView: 2,
+		  spaceBetween: 30
+		},
+		992: {
+		  slidesPerView: 3,
+		  spaceBetween: 40
+		}
+	 },
 
 });
