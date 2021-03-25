@@ -1654,6 +1654,57 @@ body.active {
   min-height: 100vh;
 }
 
+.propress-circle {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.arrowSvg {
+  position: fixed;
+  bottom: 19px;
+  right: 13px;
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.arrowSvg path {
+  fill: #2584e2;
+  -webkit-transition: fill 0.5s ease-out;
+  -o-transition: fill 0.5s ease-out;
+  transition: fill 0.5s ease-out;
+}
+
+.arrowSvg:hover path {
+  fill: crimson;
+}
+
+.propress-line {
+  background: #fff;
+  width: 100%;
+  height: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.propress-line__item {
+  background: crimson;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: width 300ms ease-out;
+  -o-transition: width 300ms ease-out;
+  transition: width 300ms ease-out;
+}
+
 .header__conteiner {
   padding: 50px 10px;
 }
